@@ -36,11 +36,11 @@ public class ContactHelper extends HelperBase {
       click(By.linkText("add new"));
     }
 
-    public void editContactForm() {
-        click(By.xpath("(//img[@alt='Edit'])"));
+    public void editContactForm(int index) {
+        driver.findElements(By.xpath("(//img[@alt='Edit'])")).get(index).click();
     }
-    public void chooseContact() {
-        click(By.name("selected[]"));
+    public void chooseContact(int index) {
+        driver.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void updateContactModification() {
