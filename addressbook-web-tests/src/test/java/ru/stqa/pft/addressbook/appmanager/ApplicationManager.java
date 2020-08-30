@@ -32,7 +32,7 @@ public class ApplicationManager {
         }
 
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        driver.get("http://localhost/addressbook/index.php");
+        driver.get("http://localhost/addressbook");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);

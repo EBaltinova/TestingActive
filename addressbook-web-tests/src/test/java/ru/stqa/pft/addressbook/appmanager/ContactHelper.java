@@ -66,4 +66,8 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
     }
+
+    public int getGroupCount() {
+        return driver.findElements(By.name("selected[]")).size();
+    }
 }
