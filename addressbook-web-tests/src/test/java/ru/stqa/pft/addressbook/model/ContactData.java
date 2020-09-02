@@ -11,7 +11,7 @@ public class ContactData {
     private int id;
 
     public ContactData(String firstname, String lastname, String number_home, String email, String group) {
-        this.id = 0;
+        this.id = Integer.MAX_VALUE;
         this.firstname = firstname;
         this.lastname = lastname;
         this.number_home = number_home;
@@ -59,14 +59,13 @@ public class ContactData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return id == that.id &&
-                Objects.equals(firstname, that.firstname) &&
+        return Objects.equals(firstname, that.firstname) &&
                 Objects.equals(lastname, that.lastname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, id);
+        return Objects.hash(firstname, lastname);
     }
 
     @Override

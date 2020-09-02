@@ -8,11 +8,6 @@ public class GroupData {
     private final String footer;
     private int id;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
     public GroupData(String name, String header, String footer) {
         this.id = Integer.MAX_VALUE;
         this.name = name;
@@ -32,6 +27,11 @@ public class GroupData {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
