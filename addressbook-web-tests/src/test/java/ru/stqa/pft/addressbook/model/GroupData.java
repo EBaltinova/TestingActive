@@ -6,23 +6,27 @@ public class GroupData {
     private final String name;
     private final String header;
     private final String footer;
-    private final String id;
+    private int id;
 
     public GroupData(String name, String header, String footer) {
-        this.id = null;
+        this.id = 0;
         this.name = name;
         this.header = header;
         this.footer = footer;
     }
-    public GroupData(String id, String name, String header, String footer) {
+    public GroupData(int id, String name, String header, String footer) {
         this.id = id;
         this.name = name;
         this.header = header;
         this.footer = footer;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -50,8 +54,8 @@ public class GroupData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GroupData groupData = (GroupData) o;
-        return Objects.equals(name, groupData.name) &&
-                Objects.equals(id, groupData.id);
+        return id == groupData.id &&
+                Objects.equals(name, groupData.name);
     }
 
     @Override
