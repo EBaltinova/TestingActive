@@ -8,17 +8,17 @@ public class ContactData {
     private final String number_home;
     private final String email;
     private String group;
-    private final String id;
+    private int id;
 
     public ContactData(String firstname, String lastname, String number_home, String email, String group) {
-        this.id = null;
+        this.id = 0;
         this.firstname = firstname;
         this.lastname = lastname;
         this.number_home = number_home;
         this.email = email;
         this.group = group;
     }
-    public ContactData(String id, String firstname, String lastname, String number_home, String email, String group) {
+    public ContactData(int id, String firstname, String lastname, String number_home, String email, String group) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -27,7 +27,7 @@ public class ContactData {
         this.group = group;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
     public String getFirstname() {
@@ -50,6 +50,25 @@ public class ContactData {
         return group;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactData that = (ContactData) o;
+        return id == that.id &&
+                Objects.equals(firstname, that.firstname) &&
+                Objects.equals(lastname, that.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, id);
+    }
+
     @Override
     public String toString() {
         return "ContactData{" +
@@ -59,18 +78,4 @@ public class ContactData {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactData that = (ContactData) o;
-        return Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstname, lastname, id);
-    }
 }
