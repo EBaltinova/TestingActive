@@ -61,7 +61,7 @@ public class ContactHelper extends HelperBase {
         submitContactCreation();
         returnToContactPage();
     }
-    public void modifyContact(int index, ContactData contact) {
+    public void modify(int index, ContactData contact) {
         editContactForm(index);
         fillContactForm(contact, false);
         updateContactModification();
@@ -77,11 +77,16 @@ public class ContactHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
+    public void delete(int index) {
+        chooseContact(index);
+        deleteContact();
+
+    }
     public int getGroupCount() {
         return driver.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = driver.findElements(By.name("entry"));
         for (WebElement element: elements) {
