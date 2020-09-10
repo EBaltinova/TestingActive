@@ -9,10 +9,10 @@ import java.util.List;
 
 public class ContactCreationTest extends TestBase {
 
-    @Test (enabled = false)
+    @Test
     public void testContactCreation() {
         List<ContactData> before = app.contact().list();
-        ContactData contact = new ContactData("Bekki", "Checker", null, null, "Test1");
+        ContactData contact = new ContactData().withFirstname("Bekki").withLastname("Checker").withGroup("Test1");
         app.contact().createContact((contact), true);
         app.goTo().gotoHomePage();
         List<ContactData> after = app.contact().list();
