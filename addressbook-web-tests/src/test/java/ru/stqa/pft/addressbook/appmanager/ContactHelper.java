@@ -44,6 +44,10 @@ public class ContactHelper extends HelperBase {
         driver.findElements(By.xpath("(//img[@alt='Edit'])")).get(index).click();
     }
 
+    public void editContactFormById(int id) {
+        driver.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
+    }
+
     public void selectContact(int index) {
         driver.findElements(By.name("selected[]")).get(index).click();
     }
@@ -68,7 +72,7 @@ public class ContactHelper extends HelperBase {
         returnToContactPage();
     }
     public void modify(ContactData contact) {
-        editContactForm(contact.getId());
+        editContactFormById(contact.getId());
         fillContactForm(contact, false);
         updateContactModification();
         returnToContactPage();
