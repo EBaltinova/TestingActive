@@ -24,7 +24,7 @@ public class ApplicationManager {
 
     public void init() {
         if (browser.equals(BrowserType.FIREFOX)) {
-            driver = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("/home/elmirabaltinova/firefox-sdk/bin/firefox"));
+            driver = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         } else if (browser.equals(BrowserType.CHROME)) {
             driver = new ChromeDriver();
         } else if (browser.equals(BrowserType.OPERA)) {
