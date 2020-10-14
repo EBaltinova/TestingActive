@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -71,12 +72,14 @@ public class ContactHelper extends HelperBase {
         fillContactForm(contact, creation);
         submitContactCreation();
         returnToContactPage();
+        contactCache = null;
     }
     public void modify(ContactData contact) {
         editContactFormById(contact.getId());
         fillContactForm(contact, false);
         updateContactModification();
         returnToContactPage();
+        contactCache = null;
     }
 
 
@@ -91,13 +94,20 @@ public class ContactHelper extends HelperBase {
     public void delete(ContactData contact) {
         selectContactById(contact.getId());
         deleteContact();
+        contactCache = null;
 
     }
     public int getGroupCount() {
         return driver.findElements(By.name("selected[]")).size();
     }
 
+    private Contacts contactCache = null;
+
     public Contacts all() {
+        if (contactCache != null) {
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         Contacts contacts = new Contacts();
         List<WebElement> elements = driver.findElements(By.name("entry"));
         for (WebElement element: elements) {
@@ -105,8 +115,8 @@ public class ContactHelper extends HelperBase {
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+            contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
-        return contacts;
+        return new Contacts(contactCache);
     }
 }
