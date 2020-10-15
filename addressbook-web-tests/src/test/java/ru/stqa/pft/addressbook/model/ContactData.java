@@ -5,9 +5,11 @@ import java.util.Objects;
 public class ContactData {
     private String firstname;
     private String lastname;
-    private String number_home;
+    private String homePhone;
     private String email;
     private String group;
+    private String mobilePhone;
+    private String workPhone;
 
     private int id = Integer.MAX_VALUE;
 
@@ -23,8 +25,16 @@ public class ContactData {
         return lastname;
     }
 
-    public String getNumber_home() {
-        return number_home;
+    public String getHomePhone() {
+        return homePhone;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public String getWorkPhone() {
+        return workPhone;
     }
 
     public String getEmail() {
@@ -50,8 +60,18 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withNumber_home(String number_home) {
-        this.number_home = number_home;
+    public ContactData withHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+        return this;
+    }
+
+    public ContactData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactData withWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
         return this;
     }
 
