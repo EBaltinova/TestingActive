@@ -28,14 +28,12 @@ public class ContactEmailTest extends TestBase {
     private String mergeEmails(ContactData contact) {
         return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail())
                 .stream().filter((s) -> ! s.equals(""))
-                //.map(ContactEmailTest::cleaned)
+                .map(ContactEmailTest::cleaned)
                 .collect(Collectors.joining("\n"));
     }
 
-    //public static String cleaned (String emails){
-       // return emails.replaceAll("\\s","").replaceAll("[-()]","");
-   // } Примечание: для проверки электронной почты не требуется очищать поля от вырезаемых символов,
-    // так как ничего не теряется при переходе из одного контакта ко всем контактам(???)
-
+    public static String cleaned (String emails){
+        return emails.replaceAll("\\s","");
+    }
 
 }

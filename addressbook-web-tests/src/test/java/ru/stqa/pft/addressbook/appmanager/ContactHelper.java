@@ -26,6 +26,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
         type(By.name("mobile"), contactData.getMobilePhone());
+        type(By.name("homeSec"), contactData.getHomeSecPhone());
         type(By.name("firstEmail"), contactData.getFirstEmail());
         type(By.name("secondEmail"), contactData.getSecondEmail());
         type(By.name("thirdEmail"), contactData.getThirdEmail());
@@ -124,13 +125,14 @@ public class ContactHelper extends HelperBase {
         String home = driver.findElement(By.name("home")).getAttribute("value");
         String mobile = driver.findElement(By.name("mobile")).getAttribute("value");
         String work = driver.findElement(By.name("work")).getAttribute("value");
+        String homeSec = driver.findElement(By.name("phone2")).getAttribute("value");
         String firstEmail = driver.findElement(By.name("email")).getAttribute("value");
         String secondEmail = driver.findElement(By.name("email2")).getAttribute("value");
         String thirdEmail = driver.findElement(By.name("email3")).getAttribute("value");
         String address = driver.findElement(By.name("address")).getAttribute("value");
         driver.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
-                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work)
+                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withHomeSecPhone(homeSec)
                 .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail).withAddress(address);
 
     }

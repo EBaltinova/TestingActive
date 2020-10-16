@@ -23,20 +23,7 @@ public class ContactAddressTest extends TestBase {
         app.goTo().gotoHomePage();
         ContactData contact = app.contact().all().iterator().next();
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-        assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm));
+        assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
     }
-
-    /*private String mergeAddress(ContactData contact) {
-        return Arrays.asList(contact.getAddress()
-                .filter((s) -> ! s.equals(""))
-                .map(ContactEmailTest::cleaned)
-                .collect(Collectors.joining("\n"));
-    } */
-
-    //public static String cleaned (String emails){
-    // return emails.replaceAll("\\s","").replaceAll("[-()]","");
-    // } Примечание: для проверки электронной почты не требуется очищать поля от вырезаемых символов,
-    // так как ничего не теряется при переходе из одного контакта ко всем контактам(???)
-
 
 }
