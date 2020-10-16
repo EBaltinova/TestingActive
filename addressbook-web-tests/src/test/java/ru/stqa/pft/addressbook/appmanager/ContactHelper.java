@@ -26,7 +26,9 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
         type(By.name("mobile"), contactData.getMobilePhone());
-        type(By.name("email"), contactData.getEmail());
+        type(By.name("firstEmail"), contactData.getFirstEmail());
+        type(By.name("secondEmail"), contactData.getSecondEmail());
+        type(By.name("thirdEmail"), contactData.getThirdEmail());
 
         if (creation) {
             new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -35,21 +37,12 @@ public class ContactHelper extends HelperBase {
         }
     }
 
-
     public void initContactCreation() {
       click(By.linkText("add new"));
     }
 
-    public void editContactForm(int index) {
-        driver.findElements(By.xpath("(//img[@alt='Edit'])")).get(index).click();
-    }
-
     public void editContactFormById(int id) {
         driver.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
-    }
-
-    public void selectContact(int index) {
-        driver.findElements(By.name("selected[]")).get(index).click();
     }
 
     private void selectContactById(int id) {
@@ -72,6 +65,7 @@ public class ContactHelper extends HelperBase {
         returnToContactPage();
         contactCache = null;
     }
+
     public void modify(ContactData contact) {
         editContactFormById(contact.getId());
         fillContactForm(contact, false);
@@ -79,7 +73,6 @@ public class ContactHelper extends HelperBase {
         returnToContactPage();
         contactCache = null;
     }
-
 
     private void returnToContactPage() {
         click(By.linkText("home page"));
@@ -113,9 +106,10 @@ public class ContactHelper extends HelperBase {
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
             String allPhones = cells.get(5).getText();
+            String allEmails = cells.get(4).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAllPhones(allPhones));
+                    .withAllPhones(allPhones).withAllEmails(allEmails));
         }
         return new Contacts(contactCache);
     }
@@ -127,9 +121,13 @@ public class ContactHelper extends HelperBase {
         String home = driver.findElement(By.name("home")).getAttribute("value");
         String mobile = driver.findElement(By.name("mobile")).getAttribute("value");
         String work = driver.findElement(By.name("work")).getAttribute("value");
+        String firstEmail = driver.findElement(By.name("email")).getAttribute("value");
+        String secondEmail = driver.findElement(By.name("email2")).getAttribute("value");
+        String thirdEmail = driver.findElement(By.name("email3")).getAttribute("value");
         driver.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
-                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work)
+                .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail);
 
     }
 
