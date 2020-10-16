@@ -29,6 +29,8 @@ public class ContactHelper extends HelperBase {
         type(By.name("firstEmail"), contactData.getFirstEmail());
         type(By.name("secondEmail"), contactData.getSecondEmail());
         type(By.name("thirdEmail"), contactData.getThirdEmail());
+        type(By.name("address"), contactData.getAddress());
+
 
         if (creation) {
             new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -105,11 +107,12 @@ public class ContactHelper extends HelperBase {
             List<WebElement> cells = element.findElements(By.tagName("td"));
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
+            String address = cells.get(3).getText();
             String allPhones = cells.get(5).getText();
             String allEmails = cells.get(4).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAllPhones(allPhones).withAllEmails(allEmails));
+                    .withAllPhones(allPhones).withAllEmails(allEmails).withAddress(address));
         }
         return new Contacts(contactCache);
     }
@@ -124,10 +127,11 @@ public class ContactHelper extends HelperBase {
         String firstEmail = driver.findElement(By.name("email")).getAttribute("value");
         String secondEmail = driver.findElement(By.name("email2")).getAttribute("value");
         String thirdEmail = driver.findElement(By.name("email3")).getAttribute("value");
+        String address = driver.findElement(By.name("address")).getAttribute("value");
         driver.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
                 .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work)
-                .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail);
+                .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail).withAddress(address);
 
     }
 
