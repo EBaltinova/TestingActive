@@ -26,11 +26,12 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
         type(By.name("mobile"), contactData.getMobilePhone());
-        type(By.name("homeSec"), contactData.getHomeSecPhone());
-        type(By.name("firstEmail"), contactData.getFirstEmail());
-        type(By.name("secondEmail"), contactData.getSecondEmail());
-        type(By.name("thirdEmail"), contactData.getThirdEmail());
+        type(By.name("phone2"), contactData.getHomeSecPhone());
+        type(By.name("email"), contactData.getFirstEmail());
+        type(By.name("email2"), contactData.getSecondEmail());
+        type(By.name("email3"), contactData.getThirdEmail());
         type(By.name("address"), contactData.getAddress());
+        attach(By.name("photo"),contactData.getPhoto());
 
 
         if (creation) {
