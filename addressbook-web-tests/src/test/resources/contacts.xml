@@ -1,0 +1,17 @@
+<list>
+  <contact>
+    <firstname>firstName 0</firstname>
+    <lastname>lastName 0</lastname>
+    <group>test 0</group>
+  </contact>
+  <contact>
+    <firstname>firstName 1</firstname>
+    <lastname>lastName 1</lastname>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <firstname>firstName 2</firstname>
+    <lastname>lastName 2</lastname>
+    <group>test 2</group>
+  </contact>
+</list>

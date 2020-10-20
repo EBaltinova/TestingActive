@@ -33,7 +33,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("address"), contactData.getAddress());
         attach(By.name("photo"),contactData.getPhoto());
 
-
         if (creation) {
             new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
