@@ -35,7 +35,7 @@ public class ContactPhoneTest extends TestBase {
     }
 
     public static String cleaned (String phones){
-        return phones.replaceAll("\\s","").replaceAll("[-()]","");
+        return phones.replaceAll("\\s","").replaceAll("[-()]","").replaceAll("00", "+");
     }
 
 

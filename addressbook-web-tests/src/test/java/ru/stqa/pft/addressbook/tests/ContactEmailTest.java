@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -26,14 +27,19 @@ public class ContactEmailTest extends TestBase {
     }
 
     private String mergeEmails(ContactData contact) {
-        return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail())
-                .stream().filter((s) -> ! s.equals(""))
-                .map(ContactEmailTest::cleaned)
-                .collect(Collectors.joining("\n"));
+        String firstEmail = contact.getFirstEmail();
+        String secondEmail = contact.getSecondEmail();
+        String thirdEmail = contact.getThirdEmail();
+        String allEmails = firstEmail + secondEmail + thirdEmail;
+        return allEmails;
+
+        //return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail());
+                //.stream().filter((s) -> ! s.equals(""))
+               // .map(ContactEmailTest::cleaned)
+               // .collect(Collectors.joining("\n"));
     }
 
-    public static String cleaned (String emails){
-        return emails.replaceAll("\\s","");
-    }
+   // public static String cleaned (String emails){
+       // return emails.replaceAll("\\s","");
 
 }
