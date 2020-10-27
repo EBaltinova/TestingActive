@@ -27,10 +27,7 @@ public class ContactEmailTest extends TestBase {
     }
 
     private String mergeEmails(ContactData contact) {
-        String firstEmail = contact.getFirstEmail();
-        String secondEmail = contact.getSecondEmail();
-        String thirdEmail = contact.getThirdEmail();
-        String allEmails = firstEmail + secondEmail + thirdEmail;
+        String allEmails = contact.getFirstEmail() + contact.getSecondEmail() + contact.getThirdEmail();
         return allEmails;
 
         //return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail());
