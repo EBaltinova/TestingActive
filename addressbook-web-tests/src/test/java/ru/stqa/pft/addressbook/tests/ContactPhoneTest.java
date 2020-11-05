@@ -15,7 +15,8 @@ public class ContactPhoneTest extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() {
         if (app.contact().all().size() == 0) {
-            app.contact().create(new ContactData().withFirstname("Bekki").withGroup("Test1").withHomePhone("5646"), true);
+            app.contact().create(new ContactData().withFirstname("Bekki"), true);
+                    //.withGroup("Test1").withHomePhone("5646"), true);
         }
     }
 
