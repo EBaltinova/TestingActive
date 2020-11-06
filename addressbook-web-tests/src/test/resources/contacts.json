@@ -2,7 +2,6 @@
   {
     "firstname": "firstName 0",
     "lastname": "lastName 0",
-    "group": "[none]",
     "homePhone": "1110",
     "mobilePhone": "2220",
     "workPhone": "3330",
@@ -15,7 +14,6 @@
   {
     "firstname": "firstName 1",
     "lastname": "lastName 1",
-    "group": "[none]",
     "homePhone": "1111",
     "mobilePhone": "2221",
     "workPhone": "3331",
@@ -28,7 +26,6 @@
   {
     "firstname": "firstName 2",
     "lastname": "lastName 2",
-    "group": "[none]",
     "homePhone": "1112",
     "mobilePhone": "2222",
     "workPhone": "3332",
@@ -41,7 +38,6 @@
   {
     "firstname": "firstName 3",
     "lastname": "lastName 3",
-    "group": "[none]",
     "homePhone": "1113",
     "mobilePhone": "2223",
     "workPhone": "3333",
@@ -54,7 +50,6 @@
   {
     "firstname": "firstName 4",
     "lastname": "lastName 4",
-    "group": "[none]",
     "homePhone": "1114",
     "mobilePhone": "2224",
     "workPhone": "3334",
@@ -67,7 +62,6 @@
   {
     "firstname": "firstName 5",
     "lastname": "lastName 5",
-    "group": "[none]",
     "homePhone": "1115",
     "mobilePhone": "2225",
     "workPhone": "3335",
@@ -80,7 +74,6 @@
   {
     "firstname": "firstName 6",
     "lastname": "lastName 6",
-    "group": "[none]",
     "homePhone": "1116",
     "mobilePhone": "2226",
     "workPhone": "3336",
@@ -93,7 +86,6 @@
   {
     "firstname": "firstName 7",
     "lastname": "lastName 7",
-    "group": "[none]",
     "homePhone": "1117",
     "mobilePhone": "2227",
     "workPhone": "3337",
@@ -106,7 +98,6 @@
   {
     "firstname": "firstName 8",
     "lastname": "lastName 8",
-    "group": "[none]",
     "homePhone": "1118",
     "mobilePhone": "2228",
     "workPhone": "3338",
@@ -119,7 +110,6 @@
   {
     "firstname": "firstName 9",
     "lastname": "lastName 9",
-    "group": "[none]",
     "homePhone": "1119",
     "mobilePhone": "2229",
     "workPhone": "3339",
