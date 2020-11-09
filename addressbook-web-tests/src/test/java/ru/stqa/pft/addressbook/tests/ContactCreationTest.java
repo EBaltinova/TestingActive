@@ -63,7 +63,8 @@ public class ContactCreationTest extends TestBase {
         Contacts before = app.db().contacts();
         //File photo = new File("src/test/resources/girl.png");
         //ContactData contact = new ContactData().withFirstname("Bekki")
-             //   .withLastname("Checker").withGroup("test2").withPhoto(photo);
+             //   .withLastname("Checker").withGroup("test2");
+        //   .withPhoto(photo);
         app.contact().create((contact), true);
         contact.inGroup(groups.iterator().next());
         app.goTo().gotoHomePage();

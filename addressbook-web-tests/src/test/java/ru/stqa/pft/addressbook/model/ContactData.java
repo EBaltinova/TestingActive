@@ -151,6 +151,11 @@ public class ContactData {
         return new Groups(groups);
     }
 
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
+
     public ContactData withFirstname(String firstname) {
         this.firstname = firstname;
         return this;
@@ -244,11 +249,6 @@ public class ContactData {
     @Override
     public int hashCode() {
         return Objects.hash(id, firstname, lastname, homePhone, mobilePhone, workPhone, homeSecPhone, firstEmail, secondEmail, thirdEmail, address);
-    }
-
-    public ContactData inGroup(GroupData group) {
-        groups.add(group);
-        return this;
     }
 
 }
