@@ -3,9 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
@@ -22,7 +20,7 @@ public class ContactEmailTest extends TestBase {
 
     @Test
     public void testContactEmails() {
-        app.goTo().gotoHomePage();
+        app.goTo().homePage();
         ContactData contact = app.contact().all().iterator().next();
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
         assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm)));

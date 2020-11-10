@@ -67,7 +67,7 @@ public class ContactCreationTest extends TestBase {
         //   .withPhoto(photo);
         app.contact().create((contact), true);
         contact.inGroup(groups.iterator().next());
-        app.goTo().gotoHomePage();
+        app.goTo().homePage();
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(
