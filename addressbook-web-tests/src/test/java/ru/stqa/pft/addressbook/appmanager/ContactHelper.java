@@ -54,8 +54,22 @@ public class ContactHelper extends HelperBase {
         addSelectGroup();
     }
 
+    public void deleteFromGroup(ContactData contact, GroupData group) {
+        selectGroupForDisplay(group);
+        selectContactById(contact.getId());
+        removeContactFromGroup();
+    }
+
+    private void removeContactFromGroup() {
+        click(By.xpath("//*[@id=\"content\"]/form[2]/div[3]/input[@name='remove']"));
+    }
+
+    private void selectGroupForDisplay(GroupData group) {
+        driver.findElement(By.xpath("//*[@id=\"right\"]/select/option[@value=" + group.getId() + "]")).click();
+    }
+
     public void selectGroup(GroupData group) {
-        driver.findElement(By.xpath("//*[@id=\"content\"]/form[2]/div[4]/select/option[@value=" + group.getId() + "]")).click();
+        driver.findElement(By.xpath("/*[@id=\"content\"]/form[2]/div[4]/select/option[@value=" + group.getId() + "]")).click();
     }
 
     public void addSelectGroup() {
@@ -158,6 +172,5 @@ public class ContactHelper extends HelperBase {
     private void initContactModificationById(int id) {
         driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
     }
-
 
 }
