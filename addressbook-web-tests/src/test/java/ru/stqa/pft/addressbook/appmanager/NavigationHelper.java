@@ -18,9 +18,10 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void homePage() {
-        if (isElementPresent(By.cssSelector("#nav > ul > li:nth-child(1) > a"))) {
+        if (isElementPresent(By.id("maintable"))) {
             return;
         }
         click(By.linkText("home"));
     }
 }
+

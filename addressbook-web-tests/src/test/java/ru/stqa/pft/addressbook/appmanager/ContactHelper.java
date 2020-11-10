@@ -11,6 +11,8 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
+import static ru.stqa.pft.addressbook.tests.TestBase.app;
+
 public class ContactHelper extends HelperBase {
 
     public ContactHelper(WebDriver driver) {
@@ -52,14 +54,19 @@ public class ContactHelper extends HelperBase {
         selectContactById(contact.getId());
         selectGroup(group);
         addSelectGroup();
+        goToContactList();
     }
 
     public void deleteFromGroup(ContactData contact, GroupData group) {
         selectGroupForDisplay(group);
         selectContactById(contact.getId());
         removeContactFromGroup();
+        goToContactList();
     }
 
+    public void goToContactList() {
+        driver.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a")).click();
+    }
     private void removeContactFromGroup() {
         click(By.xpath("//*[@id=\"content\"]/form[2]/div[3]/input[@name='remove']"));
     }
@@ -69,7 +76,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectGroup(GroupData group) {
-        driver.findElement(By.xpath("/*[@id=\"content\"]/form[2]/div[4]/select/option[@value=" + group.getId() + "]")).click();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/form[2]/div[4]/select/option[@value=" + group.getId() + "]")).click();
     }
 
     public void addSelectGroup() {
