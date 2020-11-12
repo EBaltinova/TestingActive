@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
-public class DeleteContactFromGroupTest extends TestBase {
+public class DeleteContactSecondChancesTest extends TestBase {
 
     public List<GroupData> groups;
     public GroupData group;
@@ -53,7 +53,7 @@ public class DeleteContactFromGroupTest extends TestBase {
     }
 
     @Test
-    public void deleteContactFromGroupTest() {
+    public void deleteContactSecondChancesTest() {
         Set<ContactData> before = group.getContacts();
         app.contact().deleteFromGroup(contact, group);
         Set<ContactData> after = group.getContacts();

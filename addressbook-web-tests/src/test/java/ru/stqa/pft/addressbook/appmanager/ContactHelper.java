@@ -11,8 +11,6 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
-import static ru.stqa.pft.addressbook.tests.TestBase.app;
-
 public class ContactHelper extends HelperBase {
 
     public ContactHelper(WebDriver driver) {
