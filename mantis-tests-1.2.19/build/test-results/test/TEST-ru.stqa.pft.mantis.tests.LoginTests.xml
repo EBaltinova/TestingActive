@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.mantis.tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-14T08:19:01" hostname="LAPTOP-4HRQGNJF" time="0.802">
+<testsuite name="ru.stqa.pft.mantis.tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-14T08:37:46" hostname="LAPTOP-4HRQGNJF" time="1.01">
   <properties/>
-  <testcase name="testLogin" classname="ru.stqa.pft.mantis.tests.LoginTests" time="0.802"/>
+  <testcase name="testLogin" classname="ru.stqa.pft.mantis.tests.LoginTests" time="1.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
