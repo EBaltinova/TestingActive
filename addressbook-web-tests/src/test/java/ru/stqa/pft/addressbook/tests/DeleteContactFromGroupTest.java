@@ -42,6 +42,7 @@ public class DeleteContactFromGroupTest extends TestBase {
         groups = app.db().groups().stream()
                 .filter(g -> g.getContacts().size() != 0)
                 .collect(Collectors.toList());
+
         if (groups.size() == 0) {
             contact = app.db().contacts().iterator().next();
             group = app.db().groups().iterator().next();
@@ -55,9 +56,9 @@ public class DeleteContactFromGroupTest extends TestBase {
     @Test
     public void deleteContactFromGroupTest() {
         Set<ContactData> before = group.getContacts();
+        before.remove(contact);
         app.contact().deleteFromGroup(contact, group);
         Set<ContactData> after = group.getContacts();
-        before.remove(contact);
         assertThat(after, equalTo(before));
 
 
