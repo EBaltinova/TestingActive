@@ -56,8 +56,8 @@ public class DeleteContactFromGroupTest extends TestBase {
     @Test
     public void deleteContactFromGroupTest() {
         Set<ContactData> before = group.getContacts();
-        before.remove(contact);
         app.contact().deleteFromGroup(contact, group);
+        before.remove(contact);
         Set<ContactData> after = group.getContacts();
         assertThat(after, equalTo(before));
 
