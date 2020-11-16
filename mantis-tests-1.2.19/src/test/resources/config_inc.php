@@ -1,4 +1,3 @@
-
 <?php
 $g_hostname = 'localhost';
 $g_db_type = 'mysql';
