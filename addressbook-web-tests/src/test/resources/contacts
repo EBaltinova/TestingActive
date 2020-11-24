@@ -1,0 +1,132 @@
+<list>
+  <contact>
+    <firstname>firstName 0</firstname>
+    <lastname>lastName 0</lastname>
+    <homePhone>1110</homePhone>
+    <mobilePhone>2220</mobilePhone>
+    <workPhone>3330</workPhone>
+    <homeSecPhone>4440</homeSecPhone>
+    <firstEmail>first@email0</firstEmail>
+    <secondEmail>second@email0</secondEmail>
+    <thirdEmail>third@email0</thirdEmail>
+    <address>address 0</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 1</firstname>
+    <lastname>lastName 1</lastname>
+    <homePhone>1111</homePhone>
+    <mobilePhone>2221</mobilePhone>
+    <workPhone>3331</workPhone>
+    <homeSecPhone>4441</homeSecPhone>
+    <firstEmail>first@email1</firstEmail>
+    <secondEmail>second@email1</secondEmail>
+    <thirdEmail>third@email1</thirdEmail>
+    <address>address 1</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 2</firstname>
+    <lastname>lastName 2</lastname>
+    <homePhone>1112</homePhone>
+    <mobilePhone>2222</mobilePhone>
+    <workPhone>3332</workPhone>
+    <homeSecPhone>4442</homeSecPhone>
+    <firstEmail>first@email2</firstEmail>
+    <secondEmail>second@email2</secondEmail>
+    <thirdEmail>third@email2</thirdEmail>
+    <address>address 2</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 3</firstname>
+    <lastname>lastName 3</lastname>
+    <homePhone>1113</homePhone>
+    <mobilePhone>2223</mobilePhone>
+    <workPhone>3333</workPhone>
+    <homeSecPhone>4443</homeSecPhone>
+    <firstEmail>first@email3</firstEmail>
+    <secondEmail>second@email3</secondEmail>
+    <thirdEmail>third@email3</thirdEmail>
+    <address>address 3</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 4</firstname>
+    <lastname>lastName 4</lastname>
+    <homePhone>1114</homePhone>
+    <mobilePhone>2224</mobilePhone>
+    <workPhone>3334</workPhone>
+    <homeSecPhone>4444</homeSecPhone>
+    <firstEmail>first@email4</firstEmail>
+    <secondEmail>second@email4</secondEmail>
+    <thirdEmail>third@email4</thirdEmail>
+    <address>address 4</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 5</firstname>
+    <lastname>lastName 5</lastname>
+    <homePhone>1115</homePhone>
+    <mobilePhone>2225</mobilePhone>
+    <workPhone>3335</workPhone>
+    <homeSecPhone>4445</homeSecPhone>
+    <firstEmail>first@email5</firstEmail>
+    <secondEmail>second@email5</secondEmail>
+    <thirdEmail>third@email5</thirdEmail>
+    <address>address 5</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 6</firstname>
+    <lastname>lastName 6</lastname>
+    <homePhone>1116</homePhone>
+    <mobilePhone>2226</mobilePhone>
+    <workPhone>3336</workPhone>
+    <homeSecPhone>4446</homeSecPhone>
+    <firstEmail>first@email6</firstEmail>
+    <secondEmail>second@email6</secondEmail>
+    <thirdEmail>third@email6</thirdEmail>
+    <address>address 6</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 7</firstname>
+    <lastname>lastName 7</lastname>
+    <homePhone>1117</homePhone>
+    <mobilePhone>2227</mobilePhone>
+    <workPhone>3337</workPhone>
+    <homeSecPhone>4447</homeSecPhone>
+    <firstEmail>first@email7</firstEmail>
+    <secondEmail>second@email7</secondEmail>
+    <thirdEmail>third@email7</thirdEmail>
+    <address>address 7</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 8</firstname>
+    <lastname>lastName 8</lastname>
+    <homePhone>1118</homePhone>
+    <mobilePhone>2228</mobilePhone>
+    <workPhone>3338</workPhone>
+    <homeSecPhone>4448</homeSecPhone>
+    <firstEmail>first@email8</firstEmail>
+    <secondEmail>second@email8</secondEmail>
+    <thirdEmail>third@email8</thirdEmail>
+    <address>address 8</address>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName 9</firstname>
+    <lastname>lastName 9</lastname>
+    <homePhone>1119</homePhone>
+    <mobilePhone>2229</mobilePhone>
+    <workPhone>3339</workPhone>
+    <homeSecPhone>4449</homeSecPhone>
+    <firstEmail>first@email9</firstEmail>
+    <secondEmail>second@email9</secondEmail>
+    <thirdEmail>third@email9</thirdEmail>
+    <address>address 9</address>
+    <groups/>
+  </contact>
+</list>
