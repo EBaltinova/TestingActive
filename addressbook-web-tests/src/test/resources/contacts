@@ -1,132 +1,122 @@
-<list>
-  <contact>
-    <firstname>firstName 0</firstname>
-    <lastname>lastName 0</lastname>
-    <homePhone>1110</homePhone>
-    <mobilePhone>2220</mobilePhone>
-    <workPhone>3330</workPhone>
-    <homeSecPhone>4440</homeSecPhone>
-    <firstEmail>first@email0</firstEmail>
-    <secondEmail>second@email0</secondEmail>
-    <thirdEmail>third@email0</thirdEmail>
-    <address>address 0</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 1</firstname>
-    <lastname>lastName 1</lastname>
-    <homePhone>1111</homePhone>
-    <mobilePhone>2221</mobilePhone>
-    <workPhone>3331</workPhone>
-    <homeSecPhone>4441</homeSecPhone>
-    <firstEmail>first@email1</firstEmail>
-    <secondEmail>second@email1</secondEmail>
-    <thirdEmail>third@email1</thirdEmail>
-    <address>address 1</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 2</firstname>
-    <lastname>lastName 2</lastname>
-    <homePhone>1112</homePhone>
-    <mobilePhone>2222</mobilePhone>
-    <workPhone>3332</workPhone>
-    <homeSecPhone>4442</homeSecPhone>
-    <firstEmail>first@email2</firstEmail>
-    <secondEmail>second@email2</secondEmail>
-    <thirdEmail>third@email2</thirdEmail>
-    <address>address 2</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 3</firstname>
-    <lastname>lastName 3</lastname>
-    <homePhone>1113</homePhone>
-    <mobilePhone>2223</mobilePhone>
-    <workPhone>3333</workPhone>
-    <homeSecPhone>4443</homeSecPhone>
-    <firstEmail>first@email3</firstEmail>
-    <secondEmail>second@email3</secondEmail>
-    <thirdEmail>third@email3</thirdEmail>
-    <address>address 3</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 4</firstname>
-    <lastname>lastName 4</lastname>
-    <homePhone>1114</homePhone>
-    <mobilePhone>2224</mobilePhone>
-    <workPhone>3334</workPhone>
-    <homeSecPhone>4444</homeSecPhone>
-    <firstEmail>first@email4</firstEmail>
-    <secondEmail>second@email4</secondEmail>
-    <thirdEmail>third@email4</thirdEmail>
-    <address>address 4</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 5</firstname>
-    <lastname>lastName 5</lastname>
-    <homePhone>1115</homePhone>
-    <mobilePhone>2225</mobilePhone>
-    <workPhone>3335</workPhone>
-    <homeSecPhone>4445</homeSecPhone>
-    <firstEmail>first@email5</firstEmail>
-    <secondEmail>second@email5</secondEmail>
-    <thirdEmail>third@email5</thirdEmail>
-    <address>address 5</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 6</firstname>
-    <lastname>lastName 6</lastname>
-    <homePhone>1116</homePhone>
-    <mobilePhone>2226</mobilePhone>
-    <workPhone>3336</workPhone>
-    <homeSecPhone>4446</homeSecPhone>
-    <firstEmail>first@email6</firstEmail>
-    <secondEmail>second@email6</secondEmail>
-    <thirdEmail>third@email6</thirdEmail>
-    <address>address 6</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 7</firstname>
-    <lastname>lastName 7</lastname>
-    <homePhone>1117</homePhone>
-    <mobilePhone>2227</mobilePhone>
-    <workPhone>3337</workPhone>
-    <homeSecPhone>4447</homeSecPhone>
-    <firstEmail>first@email7</firstEmail>
-    <secondEmail>second@email7</secondEmail>
-    <thirdEmail>third@email7</thirdEmail>
-    <address>address 7</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 8</firstname>
-    <lastname>lastName 8</lastname>
-    <homePhone>1118</homePhone>
-    <mobilePhone>2228</mobilePhone>
-    <workPhone>3338</workPhone>
-    <homeSecPhone>4448</homeSecPhone>
-    <firstEmail>first@email8</firstEmail>
-    <secondEmail>second@email8</secondEmail>
-    <thirdEmail>third@email8</thirdEmail>
-    <address>address 8</address>
-    <groups/>
-  </contact>
-  <contact>
-    <firstname>firstName 9</firstname>
-    <lastname>lastName 9</lastname>
-    <homePhone>1119</homePhone>
-    <mobilePhone>2229</mobilePhone>
-    <workPhone>3339</workPhone>
-    <homeSecPhone>4449</homeSecPhone>
-    <firstEmail>first@email9</firstEmail>
-    <secondEmail>second@email9</secondEmail>
-    <thirdEmail>third@email9</thirdEmail>
-    <address>address 9</address>
-    <groups/>
-  </contact>
-</list>
+[
+  {
+    "firstname": "firstName 0",
+    "lastname": "lastName 0",
+    "homePhone": "1110",
+    "mobilePhone": "2220",
+    "workPhone": "3330",
+    "homeSecPhone": "4440",
+    "firstEmail": "first@email0",
+    "secondEmail": "second@email0",
+    "thirdEmail": "third@email0",
+    "address": "address 0"
+  },
+  {
+    "firstname": "firstName 1",
+    "lastname": "lastName 1",
+    "homePhone": "1111",
+    "mobilePhone": "2221",
+    "workPhone": "3331",
+    "homeSecPhone": "4441",
+    "firstEmail": "first@email1",
+    "secondEmail": "second@email1",
+    "thirdEmail": "third@email1",
+    "address": "address 1"
+  },
+  {
+    "firstname": "firstName 2",
+    "lastname": "lastName 2",
+    "homePhone": "1112",
+    "mobilePhone": "2222",
+    "workPhone": "3332",
+    "homeSecPhone": "4442",
+    "firstEmail": "first@email2",
+    "secondEmail": "second@email2",
+    "thirdEmail": "third@email2",
+    "address": "address 2"
+  },
+  {
+    "firstname": "firstName 3",
+    "lastname": "lastName 3",
+    "homePhone": "1113",
+    "mobilePhone": "2223",
+    "workPhone": "3333",
+    "homeSecPhone": "4443",
+    "firstEmail": "first@email3",
+    "secondEmail": "second@email3",
+    "thirdEmail": "third@email3",
+    "address": "address 3"
+  },
+  {
+    "firstname": "firstName 4",
+    "lastname": "lastName 4",
+    "homePhone": "1114",
+    "mobilePhone": "2224",
+    "workPhone": "3334",
+    "homeSecPhone": "4444",
+    "firstEmail": "first@email4",
+    "secondEmail": "second@email4",
+    "thirdEmail": "third@email4",
+    "address": "address 4"
+  },
+  {
+    "firstname": "firstName 5",
+    "lastname": "lastName 5",
+    "homePhone": "1115",
+    "mobilePhone": "2225",
+    "workPhone": "3335",
+    "homeSecPhone": "4445",
+    "firstEmail": "first@email5",
+    "secondEmail": "second@email5",
+    "thirdEmail": "third@email5",
+    "address": "address 5"
+  },
+  {
+    "firstname": "firstName 6",
+    "lastname": "lastName 6",
+    "homePhone": "1116",
+    "mobilePhone": "2226",
+    "workPhone": "3336",
+    "homeSecPhone": "4446",
+    "firstEmail": "first@email6",
+    "secondEmail": "second@email6",
+    "thirdEmail": "third@email6",
+    "address": "address 6"
+  },
+  {
+    "firstname": "firstName 7",
+    "lastname": "lastName 7",
+    "homePhone": "1117",
+    "mobilePhone": "2227",
+    "workPhone": "3337",
+    "homeSecPhone": "4447",
+    "firstEmail": "first@email7",
+    "secondEmail": "second@email7",
+    "thirdEmail": "third@email7",
+    "address": "address 7"
+  },
+  {
+    "firstname": "firstName 8",
+    "lastname": "lastName 8",
+    "homePhone": "1118",
+    "mobilePhone": "2228",
+    "workPhone": "3338",
+    "homeSecPhone": "4448",
+    "firstEmail": "first@email8",
+    "secondEmail": "second@email8",
+    "thirdEmail": "third@email8",
+    "address": "address 8"
+  },
+  {
+    "firstname": "firstName 9",
+    "lastname": "lastName 9",
+    "homePhone": "1119",
+    "mobilePhone": "2229",
+    "workPhone": "3339",
+    "homeSecPhone": "4449",
+    "firstEmail": "first@email9",
+    "secondEmail": "second@email9",
+    "thirdEmail": "third@email9",
+    "address": "address 9"
+  }
+]

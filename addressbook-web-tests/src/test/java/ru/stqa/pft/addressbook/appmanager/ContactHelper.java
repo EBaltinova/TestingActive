@@ -125,6 +125,7 @@ public class ContactHelper extends HelperBase {
     public void delete(ContactData contact) {
         selectContactById(contact.getId());
         deleteContact();
+        isAlertPresent();
         contactCache = null;
 
     }
