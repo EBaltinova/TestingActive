@@ -68,7 +68,7 @@ public class JamesHelper {
         }
 
         // Don't know why it doesn't allow login at the first attempt
-        /* readUntil("Login id:");
+        readUntil("Login id:");
         write("");
         readUntil("Password:");
         write("");
@@ -80,7 +80,7 @@ public class JamesHelper {
         write(password);
 
         // Read welcome message
-        readUntil("Welcome "+login+". HELP for a list of commands"); */
+        readUntil("Welcome "+login+". HELP for a list of commands");
     }
 
     private String readUntil(String pattern) {
