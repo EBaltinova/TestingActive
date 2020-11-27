@@ -24,7 +24,7 @@ public class PasswordChangeTests extends TestBase {
         app.passChange().manageUsers();
         List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
         String confirmationLink = findConfirmationLink(mailMessages, email);
-        app.registration().finish(confirmationLink, password);
+        app.passChange().finish(confirmationLink, password);
     }
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
         MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
