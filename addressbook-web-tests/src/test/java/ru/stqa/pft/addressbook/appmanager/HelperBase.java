@@ -29,12 +29,6 @@ public class HelperBase {
         }
     }
 
-    protected void attach(By locator, File file) {
-        if (file != null) {
-                driver.findElement(locator).sendKeys(file.getAbsolutePath());
-        }
-    }
-
     public boolean isAlertPresent() {
         try {
             driver.switchTo().alert();

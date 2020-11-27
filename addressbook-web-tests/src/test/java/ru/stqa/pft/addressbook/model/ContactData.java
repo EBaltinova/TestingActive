@@ -6,7 +6,6 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import javax.swing.*;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Objects;
@@ -156,6 +155,11 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withPhoto(File photo) {
+        this.photo = photo.getPath();
+        return this;
+    }
+
     public ContactData withFirstname(String firstname) {
         this.firstname = firstname;
         return this;
@@ -211,11 +215,6 @@ public class ContactData {
 
     public ContactData withAddress(String address) {
         this.address = address;
-        return this;
-    }
-
-    public ContactData withPhoto(File photo) {
-        this.photo = photo.getPath();
         return this;
     }
 

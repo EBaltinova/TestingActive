@@ -14,7 +14,6 @@ public class ContactDeletionTest extends TestBase {
     public void ensurePreconditions() {
         if (! app.contact().isThereAContact()) {
             app.contact().create(new ContactData().withFirstname("Bekki"), true);
-                    //.withGroup("test2"), true);
         }
     }
 
@@ -24,7 +23,6 @@ public class ContactDeletionTest extends TestBase {
         ContactData deletedContact = before.iterator().next();
         app.contact().delete(deletedContact);
         app.goTo().homePage();
-        assertThat(app.contact().count(), equalTo(before.size() - 1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.without(deletedContact)));
     }

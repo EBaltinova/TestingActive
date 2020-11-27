@@ -25,7 +25,6 @@ public class ContactCreationTest extends TestBase {
 
     @DataProvider
     public Iterator<Object[]> validContactsFromXml() throws IOException {
-        List<Object[]> list = new ArrayList<Object[]>();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts")))) {
             String xml = "";
             String line = reader.readLine();
@@ -41,7 +40,6 @@ public class ContactCreationTest extends TestBase {
     }
     @DataProvider
     public Iterator<Object[]> validContactsFromJson() throws IOException {
-        List<Object[]> list = new ArrayList<Object[]>();
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts")))) {
             String json = "";
             String line = reader.readLine();
@@ -51,24 +49,20 @@ public class ContactCreationTest extends TestBase {
             }
             Gson gson = new Gson();
             List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
-            }.getType()); //List<ContactData>.class
+            }.getType());
             return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
         }
     }
 
     @Test (dataProvider = "validContactsFromJson")
     public void testContactCreation(ContactData contact) {
-        Groups groups = app.db().groups();
-
         Contacts before = app.db().contacts();
         //File photo = new File("src/test/resources/girl.png");
         //ContactData contact = new ContactData().withFirstname("Bekki")
-             //   .withLastname("Checker").withGroup("test2");
+        //   .withLastname("Checker").withGroup("test2");
         //   .withPhoto(photo);
         app.contact().create((contact), true);
-        contact.inGroup(groups.iterator().next());
         app.goTo().homePage();
-        assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));

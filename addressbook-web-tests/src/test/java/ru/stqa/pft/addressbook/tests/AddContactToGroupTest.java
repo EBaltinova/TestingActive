@@ -9,8 +9,6 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
 public class AddContactToGroupTest extends TestBase {
 
     @BeforeMethod

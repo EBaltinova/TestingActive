@@ -4,8 +4,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactEmailTest extends TestBase {
 
@@ -13,7 +13,6 @@ public class ContactEmailTest extends TestBase {
     public void ensurePreconditions() {
         if (app.contact().all().size() == 0) {
             app.contact().create(new ContactData().withFirstname("Bekki")
-                    //withGroup("Test1")
                     .withHomePhone("5646").withFirstEmail("bekki@gm.ru"), true);
         }
     }
@@ -29,14 +28,5 @@ public class ContactEmailTest extends TestBase {
     private String mergeEmails(ContactData contact) {
         String allEmails = contact.getFirstEmail() + contact.getSecondEmail() + contact.getThirdEmail();
         return allEmails;
-
-        //return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail());
-                //.stream().filter((s) -> ! s.equals(""))
-               // .map(ContactEmailTest::cleaned)
-               // .collect(Collectors.joining("\n"));
     }
-
-   // public static String cleaned (String emails){
-       // return emails.replaceAll("\\s","");
-
 }
