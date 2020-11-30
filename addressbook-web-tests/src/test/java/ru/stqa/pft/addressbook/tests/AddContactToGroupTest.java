@@ -38,18 +38,5 @@ public class AddContactToGroupTest extends TestBase {
                 .anyMatch(c -> c.getGroups().stream().anyMatch(g -> g.getId() == group.getId()));
 
         Assert.assertTrue(contactExists);
-
-//        boolean contactExists = false;
-//        for (int index = 0; index < contacts.size(); index++) {
-//            if (contacts.get(index).getId() == contact.getId()) {
-//                List<GroupData> contactGroups = new ArrayList<>(contact.getGroups());
-//                for (int indexGroup = 0; indexGroup < contactGroups.size(); indexGroup++) {
-//                    if (contactGroups.get(indexGroup).getId() == group.getId()) {
-//                        contactExists = true;
-//                    }
-//                }
-//            }
-//        }
-//        Assert.assertTrue(contactExists);
    }
 }
