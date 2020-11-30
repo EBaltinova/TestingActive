@@ -791,4 +791,41 @@
 FRequest DefaultHttpRequest(decodeResult: success, version: HTTP/1.1)
 lPOST /session/916df592d2057be3d04fd0b34764aebc/element/36f2b9d7-034c-49fc-8954-fb85aeed6523/click HTTP/1.1
 3User-Agent: selenium/4.0.0-alpha-6 (java windows)
-Content-Length
+Content-Length: 50
+/Content-Type: application/json; charset=utf-8
+host: localhost:26596
+accept: */*
+
+HResponse DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 OK
+Content-Length: 14
+/Content-Type: application/json; charset=utf-8
+cache-control: no-cache
+
+œ15:16:00.848 [AsyncHttpClient-3-1] DEBUG org.asynchttpclient.netty.channel.ChannelManager - Adding key: http://localhost:26596 for channel [id: 0xde9a95fa, L:/127.0.0.1:61353 - R:localhost/127.0.0.1:26596]
+î15:16:13.210 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:13.215 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: AUTH
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: DATA
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: EHLO
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: HELO
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: HELP
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: MAIL
+c15:16:13.319 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: NOOP
+c15:16:13.334 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: QUIT
+c15:16:13.334 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: RCPT
+c15:16:13.334 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: RSET
+g15:16:13.334 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: STARTTLS
+c15:16:13.334 [Test worker] DEBUG org.subethamail.smtp.server.CommandHandler - Added command: VRFY
+î15:16:15.058 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:16.765 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+î15:16:21.283 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:21.283 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+î15:16:23.331 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:24.439 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+î15:16:25.961 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:27.027 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+î15:16:29.431 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:61354 : 1
+î15:16:31.313 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Entry count for : http://localhost:26596 : 1
+è15:16:32.373 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Adding Candidate expired Channel [id: 0x5a47e403, L:/127.0.0.1:61362 - R:localhost/127.0.0.1:61354] isIdleTimeoutExpired=true isRemotelyClosed=false isTtlExpired=false
+ø15:16:32.373 [AsyncHttpClient-timer-1-1] DEBUG org.asynchttpclient.netty.channel.DefaultChannelPool - Closing Idle Channel [id: 0x5a47e403, L:/127.0.0.1:61362 - R:localhost/127.0.0.1:61354]

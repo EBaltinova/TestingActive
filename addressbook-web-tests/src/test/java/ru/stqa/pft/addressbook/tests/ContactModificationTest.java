@@ -39,24 +39,17 @@ public class ContactModificationTest extends TestBase {
         }
     }
 
-    @BeforeMethod()
-    public void ensurePreconditions() {
-        if (app.db().contacts().size() == 0) {
-            app.goTo().homePage();
-            app.contact().create(new ContactData().withFirstname("Bekki"), true);
-        }
-    }
-
-    @Test
-    public void testContactModification() {
+    @Test (dataProvider = "validContactsFromJson")
+    public void testContactModification(ContactData contact) {
+        app.contact().create((contact), true);
         Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
-        ContactData contact = new ContactData().
+        ContactData contactModify = new ContactData().
                 withId(modifiedContact.getId()).withFirstname("Bekki").withLastname("Howard").withHomePhone("332211").withFirstEmail("bekki@howard.com").withAddress("fhfcv")
                 .withSecondEmail("era@ra").withThirdEmail("test@testt").withMobilePhone("535").withHomeSecPhone("546465").withWorkPhone("4533");
-        app.contact().modify(contact);
+        app.contact().modify(contactModify);
         Contacts after = app.db().contacts();
-        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contactModify)));
         verifyContactListInUI();
     }
 
