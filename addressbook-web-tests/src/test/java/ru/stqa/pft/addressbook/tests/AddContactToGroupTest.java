@@ -10,6 +10,7 @@ import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddContactToGroupTest extends TestBase {
 
@@ -27,19 +28,17 @@ public class AddContactToGroupTest extends TestBase {
 
     @Test
     public void addContactToGroup() {
-        
+       ContactData contact = app.db().contacts().stream()
+               .filter((c) -> c.getGroups().size() == 0).findFirst().get();
+        GroupData group = app.db().groups().iterator().next();
+        app.contact().addToGroup(contact, group);
 
-//        ContactData contact = app.db().contacts().iterator().next();
-//        GroupData group = app.db().groups().iterator().next();
-//        app.contact().addToGroup(contact, group);
-//        List<ContactData> contacts = new ArrayList<>(app.db().contacts());
-//
-//        /*boolean contactExists = app.db().contacts().stream()
-//                .filter(c -> c.getId() == contact.getId())
-//                .anyMatch(c -> contact.getGroups().stream().anyMatch(g -> g.getId() == group.getId()));
-//
-//        Assert.assertTrue(contactExists);*/
-//
+        boolean contactExists = app.db().contacts().stream()
+                .filter(c -> c.getId() == contact.getId())
+                .anyMatch(c -> c.getGroups().stream().anyMatch(g -> g.getId() == group.getId()));
+
+        Assert.assertTrue(contactExists);
+
 //        boolean contactExists = false;
 //        for (int index = 0; index < contacts.size(); index++) {
 //            if (contacts.get(index).getId() == contact.getId()) {
