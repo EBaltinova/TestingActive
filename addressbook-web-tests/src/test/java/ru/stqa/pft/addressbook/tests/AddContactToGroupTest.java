@@ -20,7 +20,9 @@ public class AddContactToGroupTest extends TestBase {
             app.goTo().groupPage();
             app.group().create(new GroupData().withName("Test").withHeader("TestHeader").withFooter("TestFooter"));
         }
-        if (app.db().contacts().size() == 0) {
+
+        if (!app.db().contacts().stream()
+                .anyMatch((c) -> c.getGroups().size() == 0)) {
             app.goTo().homePage();
             app.contact().create(new ContactData().withFirstname("Bekki"), true);
         }
@@ -29,7 +31,7 @@ public class AddContactToGroupTest extends TestBase {
     @Test
     public void addContactToGroup() {
        ContactData contact = app.db().contacts().stream()
-               .filter((c) -> c.getGroups().size() == 0).findFirst().get();
+               .filter((c) -> c.getGroups().size() == 0).findAny().get();
         GroupData group = app.db().groups().iterator().next();
         app.contact().addToGroup(contact, group);
 
