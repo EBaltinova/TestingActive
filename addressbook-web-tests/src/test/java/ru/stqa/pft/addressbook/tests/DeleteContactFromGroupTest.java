@@ -1,16 +1,13 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class DeleteContactFromGroupTest extends TestBase {
 
@@ -48,14 +45,16 @@ public class DeleteContactFromGroupTest extends TestBase {
 
     @Test
     public void deleteContactFromGroupTest() {
-        Set<ContactData> before = group.getContacts();
+        ContactData contact = app.db().contacts().stream().filter((c) -> c.getGroups().size() != 0).findAny().get();
+        GroupData group = contact.getGroups().iterator().next();
+
         app.contact().deleteFromGroup(contact, group);
-        before.remove(contact);
-        Set<ContactData> after = group.getContacts();
-        assertThat(after, equalTo(before));
 
+        boolean contactNotExists = app.db().contacts().stream()
+                .filter(c -> c.getId() == contact.getId())
+                .anyMatch(c -> contact.getGroups().stream().anyMatch(g -> g.getId() == group.getId()));
 
-
+        Assert.assertTrue(contactNotExists);
     }
 }
 
