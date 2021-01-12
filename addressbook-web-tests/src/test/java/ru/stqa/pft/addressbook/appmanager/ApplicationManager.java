@@ -45,19 +45,20 @@ public class ApplicationManager {
                 driver = new ChromeDriver();
             } else if (browser.equals(BrowserType.IE)) {
                 driver = new InternetExplorerDriver();
-        }
+            }
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName(browser);
             driver = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get(properties.getProperty("web.baseUrl"));
-        groupHelper = new GroupHelper(driver);
-        navigationHelper = new NavigationHelper(driver);
-        sessionHelper = new SessionHelper(driver);
-        contactHelper = new ContactHelper(driver);
-        sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.get(properties.getProperty("web.baseUrl"));
+            groupHelper = new GroupHelper(driver);
+            navigationHelper = new NavigationHelper(driver);
+            sessionHelper = new SessionHelper(driver);
+            contactHelper = new ContactHelper(driver);
+            sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
+        }
     }
 
     public void stop() {
