@@ -31,6 +31,14 @@ public class ContactData {
     private String lastname;
 
     @Expose
+    @Column(name = "nickname")
+    private String nickname;
+
+    @Expose
+    @Column(name = "title")
+    private String title;
+
+    @Expose
     @Column(name = "home")
     @Type(type = "text")
     private String homePhone;
@@ -101,6 +109,14 @@ public class ContactData {
         return lastname;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
     public String getHomePhone() {
         return homePhone;
     }
@@ -167,6 +183,16 @@ public class ContactData {
 
     public ContactData withLastname(String lastname) {
         this.lastname = lastname;
+        return this;
+    }
+
+    public ContactData withNickname (String nickname) {
+        this.nickname = nickname;
+        return this;
+    }
+
+    public ContactData title (String title) {
+        this.title = title;
         return this;
     }
 

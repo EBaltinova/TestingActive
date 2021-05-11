@@ -24,6 +24,7 @@ public class ContactHelper extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
+        type(By.name("nickname"), contactData.getNickname());
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
         type(By.name("mobile"), contactData.getMobilePhone());
@@ -33,6 +34,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("email3"), contactData.getThirdEmail());
         type(By.name("address"), contactData.getAddress());
         //attach(By.name("photo"),contactData.getPhoto());
+
 
         if (creation) {
             if (contactData.getGroups().size() > 0) {
@@ -159,6 +161,7 @@ public class ContactHelper extends HelperBase {
         initContactModificationById(contact.getId());
         String firstname = driver.findElement(By.name("firstname")).getAttribute("value");
         String lastname = driver.findElement(By.name("lastname")).getAttribute("value");
+        String nickname = driver.findElement(By.name("nickname")).getAttribute("value");
         String home = driver.findElement(By.name("home")).getAttribute("value");
         String mobile = driver.findElement(By.name("mobile")).getAttribute("value");
         String work = driver.findElement(By.name("work")).getAttribute("value");
@@ -168,7 +171,7 @@ public class ContactHelper extends HelperBase {
         String thirdEmail = driver.findElement(By.name("email3")).getAttribute("value");
         String address = driver.findElement(By.name("address")).getAttribute("value");
         driver.navigate().back();
-        return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
+        return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname).withNickname(nickname)
                 .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withHomeSecPhone(homeSec)
                 .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail).withAddress(address);
 
