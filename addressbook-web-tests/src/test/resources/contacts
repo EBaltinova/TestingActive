@@ -1,14 +1,29 @@
 [
   {
-    "firstname": "firstName 2",
-    "lastname": "lastName 2",
-    "homePhone": "1112",
-    "mobilePhone": "2222",
-    "workPhone": "3332",
-    "homeSecPhone": "4442",
-    "firstEmail": "first@email2",
-    "secondEmail": "second@email2",
-    "thirdEmail": "third@email2",
-    "address": "address 2"
+     "firstname": "firstName 0",
+     "lastname": "lastName 0",
+     "middleName": "middlename 0",
+     "nickname": "nickname 0",
+     "title": "title 0",
+     "company": "company 0",
+     "faxPhone": "777777 0",
+     "homepage": "homepage 0",
+     "secondAddress": "secondaddress 0",
+     "notes": "nonononotes 0",
+     "homePhone": "1110",
+     "mobilePhone": "2220",
+     "workPhone": "3330",
+     "homeSecPhone": "4440",
+     "firstEmail": "first@email0",
+     "secondEmail": "second@email0",
+     "thirdEmail": "third@email0",
+     "address": "address 0",
+     "photo": "src\\test\\resources\\girl.png",
+     "bday": 12,
+     "bmonth": "may",
+     "byear": "1999",
+     "aday": 12,
+     "amonth": "december",
+     "ayear": "1993"
   }
-  ]
+]

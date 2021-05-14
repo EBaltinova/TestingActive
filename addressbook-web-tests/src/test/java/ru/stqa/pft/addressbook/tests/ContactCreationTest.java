@@ -38,7 +38,7 @@ public class ContactCreationTest extends TestBase {
     }
     @DataProvider
     public Iterator<Object[]> validContactsFromJson() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts")))) {
             String json = "";
             String line = reader.readLine();
             while (line != null) {
@@ -55,11 +55,9 @@ public class ContactCreationTest extends TestBase {
     @Test (dataProvider = "validContactsFromJson")
     public void testContactCreation(ContactData contact) {
         Contacts before = app.db().contacts();
-        //File photo = new File("src/test/resources/girl.png");
-        //ContactData contact = new ContactData().withFirstname("Bekki")
-        //   .withLastname("Checker").withGroup("test2");
-        //   .withPhoto(photo);
-        app.contact().create((contact), true);
+        File photo = new File("src/test/resources/girl.png");
+        contact.withPhoto(photo);
+        app.contact().create(contact, true);
         app.goTo().homePage();
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(

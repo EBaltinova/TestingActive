@@ -25,6 +25,22 @@ public class ContactHelper extends HelperBase {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("nickname"), contactData.getNickname());
+        type(By.name("middlename"), contactData.getMiddleName());
+        type(By.name("title"), contactData.getTitle());
+        type(By.name("address"), contactData.getAddress());
+        type(By.name("company"), contactData.getCompany());
+        type(By.name("fax"), contactData.getFaxPhone());
+        type(By.name("homepage"), contactData.getHomepage());
+        type(By.name("address2"), contactData.getSecondAddress());
+
+        type(By.name("bday"), String.format("%d", contactData.getBday()));
+        type(By.name("bmonth"), contactData.getBmonth());
+        type(By.name("byear"), contactData.getByear());
+        type(By.name("aday"), String.format("%d", contactData.getAday()));
+        type(By.name("amonth"), contactData.getAmonth());
+        type(By.name("ayear"), contactData.getAyear());
+
+        type(By.name("notes"), contactData.getNotes());
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
         type(By.name("mobile"), contactData.getMobilePhone());
@@ -32,8 +48,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("email"), contactData.getFirstEmail());
         type(By.name("email2"), contactData.getSecondEmail());
         type(By.name("email3"), contactData.getThirdEmail());
-        type(By.name("address"), contactData.getAddress());
-        //attach(By.name("photo"),contactData.getPhoto());
+        attach(By.name("photo"),contactData.getPhoto());
 
 
         if (creation) {
@@ -162,6 +177,19 @@ public class ContactHelper extends HelperBase {
         String firstname = driver.findElement(By.name("firstname")).getAttribute("value");
         String lastname = driver.findElement(By.name("lastname")).getAttribute("value");
         String nickname = driver.findElement(By.name("nickname")).getAttribute("value");
+        String middlename = driver.findElement(By.name("middlename")).getAttribute("value");
+        String title = driver.findElement(By.name("title")).getAttribute("value");
+        String company = driver.findElement(By.name("company")).getAttribute("value");
+        String faxPhone = driver.findElement(By.name("faxPhone")).getAttribute("value");
+        String homepage = driver.findElement(By.name("homepage")).getAttribute("value");
+        String secondAddress = driver.findElement(By.name("secondAddress")).getAttribute("value");
+        String notes = driver.findElement(By.name("notes")).getAttribute("value");
+        Integer bday = Integer.parseInt(driver.findElement(By.name("bday")).getAttribute("value"));
+        String bmonth = driver.findElement(By.name("bmonth")).getAttribute("value");
+        String byear = driver.findElement(By.name("byear")).getAttribute("value");
+        Integer aday = Integer.parseInt(driver.findElement(By.name("aday")).getAttribute("value"));
+        String amonth = driver.findElement(By.name("amonth")).getAttribute("value");
+        String ayear = driver.findElement(By.name("ayear")).getAttribute("value");
         String home = driver.findElement(By.name("home")).getAttribute("value");
         String mobile = driver.findElement(By.name("mobile")).getAttribute("value");
         String work = driver.findElement(By.name("work")).getAttribute("value");
@@ -172,7 +200,11 @@ public class ContactHelper extends HelperBase {
         String address = driver.findElement(By.name("address")).getAttribute("value");
         driver.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname).withNickname(nickname)
-                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withHomeSecPhone(homeSec)
+                .withTitle(title).withCompany(company).withFaxPhone(faxPhone).withHomepage(homepage).withSecondAddress(secondAddress)
+                .withNotes(notes).withHomePhone(home).withMiddleName(middlename)
+                .withMobilePhone(mobile).withWorkPhone(work).withHomeSecPhone(homeSec)
+                .withBday(bday).withBmonth(bmonth).withByear(byear)
+                .withAday(aday).withAmonth(amonth).withAyear(ayear)
                 .withFirstEmail(firstEmail).withSecondEmail(secondEmail).withThirdEmail(thirdEmail).withAddress(address);
 
     }

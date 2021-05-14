@@ -88,6 +88,19 @@ public class ContactDataGenerator {
             contacts.add(new ContactData().withFirstname(String.format("firstName %s", i))
                     .withLastname(String.format("lastName %s", i))
                     .withNickname(String.format("nickname %s", i))
+                    .withMiddleName(String.format("middlename %s", i))
+                    .withTitle(String.format("title %s", i))
+                    .withCompany(String.format("company %s", i))
+                    .withFaxPhone(String.format("777777 %s", i))
+                    .withHomepage(String.format("homepage %s", i))
+                    .withSecondAddress(String.format("secondaddress %s", i))
+                    .withNotes(String.format("nonononotes %s", i))
+                    .withBday(12)
+                    .withBmonth(String.format("may"))
+                    .withByear(String.format("1999"))
+                    .withAday(12)
+                    .withAmonth(String.format("december"))
+                    .withAyear(String.format("1993"))
                     .withHomePhone(String.format("111%s", i))
                     .withMobilePhone(String.format("222%s", i))
                     .withWorkPhone(String.format("333%s", i))
@@ -95,6 +108,7 @@ public class ContactDataGenerator {
                     .withAddress(String.format("address %s", i))
                     .withFirstEmail(String.format("first@email%s", i))
                     .withSecondEmail(String.format("second@email%s", i))
+                    .withPhoto(new File("src/test/resources/girl.png"))
                     .withThirdEmail(String.format("third@email%s", i)));
 
         }
