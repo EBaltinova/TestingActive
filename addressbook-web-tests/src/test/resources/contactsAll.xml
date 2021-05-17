@@ -1,0 +1,282 @@
+<list>
+  <contact>
+    <firstname>firstName XML 0</firstname>
+    <lastname>lastName XML 0</lastname>
+    <middleName>middlename 0</middleName>
+    <nickname>nickname 0</nickname>
+    <title>title 0</title>
+    <company>company 0</company>
+    <faxPhone>777777 0</faxPhone>
+    <homepage>homepage 0</homepage>
+    <secondAddress>secondaddress 0</secondAddress>
+    <notes>nonononotes 0</notes>
+    <homePhone>1110</homePhone>
+    <mobilePhone>2220</mobilePhone>
+    <workPhone>3330</workPhone>
+    <homeSecPhone>4440</homeSecPhone>
+    <firstEmail>first@email0</firstEmail>
+    <secondEmail>second@email0</secondEmail>
+    <thirdEmail>third@email0</thirdEmail>
+    <address>address 0</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 1</firstname>
+    <lastname>lastName XML 1</lastname>
+    <middleName>middlename 1</middleName>
+    <nickname>nickname 1</nickname>
+    <title>title 1</title>
+    <company>company 1</company>
+    <faxPhone>777777 1</faxPhone>
+    <homepage>homepage 1</homepage>
+    <secondAddress>secondaddress 1</secondAddress>
+    <notes>nonononotes 1</notes>
+    <homePhone>1111</homePhone>
+    <mobilePhone>2221</mobilePhone>
+    <workPhone>3331</workPhone>
+    <homeSecPhone>4441</homeSecPhone>
+    <firstEmail>first@email1</firstEmail>
+    <secondEmail>second@email1</secondEmail>
+    <thirdEmail>third@email1</thirdEmail>
+    <address>address 1</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 2</firstname>
+    <lastname>lastName XML 2</lastname>
+    <middleName>middlename 2</middleName>
+    <nickname>nickname 2</nickname>
+    <title>title 2</title>
+    <company>company 2</company>
+    <faxPhone>777777 2</faxPhone>
+    <homepage>homepage 2</homepage>
+    <secondAddress>secondaddress 2</secondAddress>
+    <notes>nonononotes 2</notes>
+    <homePhone>1112</homePhone>
+    <mobilePhone>2222</mobilePhone>
+    <workPhone>3332</workPhone>
+    <homeSecPhone>4442</homeSecPhone>
+    <firstEmail>first@email2</firstEmail>
+    <secondEmail>second@email2</secondEmail>
+    <thirdEmail>third@email2</thirdEmail>
+    <address>address 2</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 3</firstname>
+    <lastname>lastName XML 3</lastname>
+    <middleName>middlename 3</middleName>
+    <nickname>nickname 3</nickname>
+    <title>title 3</title>
+    <company>company 3</company>
+    <faxPhone>777777 3</faxPhone>
+    <homepage>homepage 3</homepage>
+    <secondAddress>secondaddress 3</secondAddress>
+    <notes>nonononotes 3</notes>
+    <homePhone>1113</homePhone>
+    <mobilePhone>2223</mobilePhone>
+    <workPhone>3333</workPhone>
+    <homeSecPhone>4443</homeSecPhone>
+    <firstEmail>first@email3</firstEmail>
+    <secondEmail>second@email3</secondEmail>
+    <thirdEmail>third@email3</thirdEmail>
+    <address>address 3</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 4</firstname>
+    <lastname>lastName XML 4</lastname>
+    <middleName>middlename 4</middleName>
+    <nickname>nickname 4</nickname>
+    <title>title 4</title>
+    <company>company 4</company>
+    <faxPhone>777777 4</faxPhone>
+    <homepage>homepage 4</homepage>
+    <secondAddress>secondaddress 4</secondAddress>
+    <notes>nonononotes 4</notes>
+    <homePhone>1114</homePhone>
+    <mobilePhone>2224</mobilePhone>
+    <workPhone>3334</workPhone>
+    <homeSecPhone>4444</homeSecPhone>
+    <firstEmail>first@email4</firstEmail>
+    <secondEmail>second@email4</secondEmail>
+    <thirdEmail>third@email4</thirdEmail>
+    <address>address 4</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 5</firstname>
+    <lastname>lastName XML 5</lastname>
+    <middleName>middlename 5</middleName>
+    <nickname>nickname 5</nickname>
+    <title>title 5</title>
+    <company>company 5</company>
+    <faxPhone>777777 5</faxPhone>
+    <homepage>homepage 5</homepage>
+    <secondAddress>secondaddress 5</secondAddress>
+    <notes>nonononotes 5</notes>
+    <homePhone>1115</homePhone>
+    <mobilePhone>2225</mobilePhone>
+    <workPhone>3335</workPhone>
+    <homeSecPhone>4445</homeSecPhone>
+    <firstEmail>first@email5</firstEmail>
+    <secondEmail>second@email5</secondEmail>
+    <thirdEmail>third@email5</thirdEmail>
+    <address>address 5</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 6</firstname>
+    <lastname>lastName XML 6</lastname>
+    <middleName>middlename 6</middleName>
+    <nickname>nickname 6</nickname>
+    <title>title 6</title>
+    <company>company 6</company>
+    <faxPhone>777777 6</faxPhone>
+    <homepage>homepage 6</homepage>
+    <secondAddress>secondaddress 6</secondAddress>
+    <notes>nonononotes 6</notes>
+    <homePhone>1116</homePhone>
+    <mobilePhone>2226</mobilePhone>
+    <workPhone>3336</workPhone>
+    <homeSecPhone>4446</homeSecPhone>
+    <firstEmail>first@email6</firstEmail>
+    <secondEmail>second@email6</secondEmail>
+    <thirdEmail>third@email6</thirdEmail>
+    <address>address 6</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 7</firstname>
+    <lastname>lastName XML 7</lastname>
+    <middleName>middlename 7</middleName>
+    <nickname>nickname 7</nickname>
+    <title>title 7</title>
+    <company>company 7</company>
+    <faxPhone>777777 7</faxPhone>
+    <homepage>homepage 7</homepage>
+    <secondAddress>secondaddress 7</secondAddress>
+    <notes>nonononotes 7</notes>
+    <homePhone>1117</homePhone>
+    <mobilePhone>2227</mobilePhone>
+    <workPhone>3337</workPhone>
+    <homeSecPhone>4447</homeSecPhone>
+    <firstEmail>first@email7</firstEmail>
+    <secondEmail>second@email7</secondEmail>
+    <thirdEmail>third@email7</thirdEmail>
+    <address>address 7</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 8</firstname>
+    <lastname>lastName XML 8</lastname>
+    <middleName>middlename 8</middleName>
+    <nickname>nickname 8</nickname>
+    <title>title 8</title>
+    <company>company 8</company>
+    <faxPhone>777777 8</faxPhone>
+    <homepage>homepage 8</homepage>
+    <secondAddress>secondaddress 8</secondAddress>
+    <notes>nonononotes 8</notes>
+    <homePhone>1118</homePhone>
+    <mobilePhone>2228</mobilePhone>
+    <workPhone>3338</workPhone>
+    <homeSecPhone>4448</homeSecPhone>
+    <firstEmail>first@email8</firstEmail>
+    <secondEmail>second@email8</secondEmail>
+    <thirdEmail>third@email8</thirdEmail>
+    <address>address 8</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+  <contact>
+    <firstname>firstName XML 9</firstname>
+    <lastname>lastName XML 9</lastname>
+    <middleName>middlename 9</middleName>
+    <nickname>nickname 9</nickname>
+    <title>title 9</title>
+    <company>company 9</company>
+    <faxPhone>777777 9</faxPhone>
+    <homepage>homepage 9</homepage>
+    <secondAddress>secondaddress 9</secondAddress>
+    <notes>nonononotes 9</notes>
+    <homePhone>1119</homePhone>
+    <mobilePhone>2229</mobilePhone>
+    <workPhone>3339</workPhone>
+    <homeSecPhone>4449</homeSecPhone>
+    <firstEmail>first@email9</firstEmail>
+    <secondEmail>second@email9</secondEmail>
+    <thirdEmail>third@email9</thirdEmail>
+    <address>address 9</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
+  </contact>
+</list>

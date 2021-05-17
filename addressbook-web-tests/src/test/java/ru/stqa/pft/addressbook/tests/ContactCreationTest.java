@@ -26,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTest extends TestBase {
     @DataProvider
     public Iterator<Object[]> validContactsFromXml() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contactsAll.xml")))) {
             StringBuilder xml = new StringBuilder();
             String line = reader.readLine();
 
@@ -45,7 +45,7 @@ public class ContactCreationTest extends TestBase {
 
     @DataProvider
     public Iterator<Object[]> validContactsFromJson() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contactsAll.json"))) {
             StringBuilder json = new StringBuilder();
             String line = reader.readLine();
 
@@ -62,8 +62,9 @@ public class ContactCreationTest extends TestBase {
         }
     }
 
-    private Iterator<Object[]> readCsv(String path) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+    @DataProvider
+    public Iterator<Object[]> validContactsFromCsv(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contactsAll.csv"))) {
             StringBuilder csv = new StringBuilder();
             String line = reader.readLine();
             while (line != null) {
@@ -77,96 +78,88 @@ public class ContactCreationTest extends TestBase {
         }
     }
 
-    @DataProvider
-    public Object[] validContactsFromCsv() throws IOException {
-        ContactData contact = (ContactData)readCsv("src/test/resources/contact.csv").next()[0];
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("create", contact);
 
-        return Collections.singletonList(map).toArray();
+        @Test(dataProvider = "validContactsFromJson")
+        public void testContactCreationFromJson (ContactData contact){
+            ContactHelper contactHelper = app.contact();
+            SoftAssert softAssert = new SoftAssert();
+            Contacts before = app.db().contacts();
+
+            assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
+            contactHelper.initContactCreation();
+
+            Arrays
+                    .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
+                    .forEach((String elementName) -> {
+                        String message = String.format("Element <%s> is not available", elementName);
+                        softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
+                    });
+
+            softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
+            softAssert.assertAll();
+
+            contactHelper.fillContactForm(contact, true);
+            contactHelper.submitContactCreation();
+            app.goTo().homePage();
+            Contacts after = app.db().contacts();
+            assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+            verifyContactListInUI();
+        }
+
+        @Test(dataProvider = "validContactsFromCsv")
+        public void testContactCreationFromCsv (HashMap < String, ContactData > contactsMap){
+            ContactData contact = contactsMap.get("create");
+            ContactHelper contactHelper = app.contact();
+            SoftAssert softAssert = new SoftAssert();
+            Contacts before = app.db().contacts();
+
+            assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
+            contactHelper.initContactCreation();
+
+            Arrays
+                    .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
+                    .forEach((String elementName) -> {
+                        String message = String.format("Element <%s> is not available", elementName);
+                        softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
+                    });
+
+            softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
+            softAssert.assertAll();
+
+            contactHelper.fillContactForm(contact, true);
+            contactHelper.submitContactCreation();
+            app.goTo().homePage();
+            Contacts after = app.db().contacts();
+            assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+            verifyContactListInUI();
+        }
+
+        @Test(dataProvider = "validContactsFromXml")
+        public void testContactCreationFromXml (ContactData contact){
+            ContactHelper contactHelper = app.contact();
+            SoftAssert softAssert = new SoftAssert();
+            Contacts before = app.db().contacts();
+
+            assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
+            contactHelper.initContactCreation();
+
+            Arrays
+                    .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
+                    .forEach((String elementName) -> {
+                        String message = String.format("Element <%s> is not available", elementName);
+                        softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
+                    });
+
+            softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
+            softAssert.assertAll();
+
+            contactHelper.fillContactForm(contact, true);
+            contactHelper.submitContactCreation();
+            app.goTo().homePage();
+            Contacts after = app.db().contacts();
+            assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+            verifyContactListInUI();
+        }
     }
-
-    @Test(dataProvider = "validContactsFromJson")
-    public void testContactCreationJson(ContactData contact) {
-        ContactHelper contactHelper = app.contact();
-        SoftAssert softAssert = new SoftAssert();
-        Contacts before = app.db().contacts();
-
-        assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
-        contactHelper.initContactCreation();
-
-        Arrays
-                .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
-                .forEach((String elementName) -> {
-                    String message = String.format("Element <%s> is not available", elementName);
-                    softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
-                });
-
-        softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
-        softAssert.assertAll();
-
-        contactHelper.fillContactForm(contact, true);
-        contactHelper.submitContactCreation();
-        app.goTo().homePage();
-        Contacts after = app.db().contacts();
-        assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-        verifyContactListInUI();
-    }
-
-    @Test(dataProvider = "validContactsFromCsv")
-    public void testContactCreationCsv(HashMap<String, ContactData> contactsMap) {
-        ContactData contact = contactsMap.get("create");
-        ContactHelper contactHelper = app.contact();
-        SoftAssert softAssert = new SoftAssert();
-        Contacts before = app.db().contacts();
-
-        assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
-        contactHelper.initContactCreation();
-
-        Arrays
-                .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
-                .forEach((String elementName) -> {
-                    String message = String.format("Element <%s> is not available", elementName);
-                    softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
-                });
-
-        softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
-        softAssert.assertAll();
-
-        contactHelper.fillContactForm(contact, true);
-        contactHelper.submitContactCreation();
-        app.goTo().homePage();
-        Contacts after = app.db().contacts();
-        assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-        verifyContactListInUI();
-    }
-
-    @Test(dataProvider = "validContactsFromXml")
-    public void testContactCreationXml(ContactData contact) {
-        ContactHelper contactHelper = app.contact();
-        SoftAssert softAssert = new SoftAssert();
-        Contacts before = app.db().contacts();
-
-        assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
-        contactHelper.initContactCreation();
-
-        Arrays
-                .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
-                .forEach((String elementName) -> {
-                    String message = String.format("Element <%s> is not available", elementName);
-                    softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
-                });
-
-        softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
-        softAssert.assertAll();
-
-        contactHelper.fillContactForm(contact, true);
-        contactHelper.submitContactCreation();
-        app.goTo().homePage();
-        Contacts after = app.db().contacts();
-        assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-        verifyContactListInUI();
-    }
-}
 
 

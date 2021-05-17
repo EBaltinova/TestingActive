@@ -1,0 +1,62 @@
+<list>
+  <group>
+    <name>test XML0</name>
+    <header>header 0</header>
+    <footer>footer 0</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML1</name>
+    <header>header 1</header>
+    <footer>footer 1</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML2</name>
+    <header>header 2</header>
+    <footer>footer 2</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML3</name>
+    <header>header 3</header>
+    <footer>footer 3</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML4</name>
+    <header>header 4</header>
+    <footer>footer 4</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML5</name>
+    <header>header 5</header>
+    <footer>footer 5</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML6</name>
+    <header>header 6</header>
+    <footer>footer 6</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML7</name>
+    <header>header 7</header>
+    <footer>footer 7</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML8</name>
+    <header>header 8</header>
+    <footer>footer 8</footer>
+    <contacts/>
+  </group>
+  <group>
+    <name>test XML9</name>
+    <header>header 9</header>
+    <footer>footer 9</footer>
+    <contacts/>
+  </group>
+</list>

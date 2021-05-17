@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
@@ -14,6 +15,11 @@ import java.util.Set;
 @Entity
 @Table(name = "group_list")
 
+@JsonPropertyOrder({
+        "name",
+        "header",
+        "footer"
+})
 public class GroupData {
     @XStreamOmitField
     @Id
@@ -22,6 +28,7 @@ public class GroupData {
 
     @Expose
     @Column(name = "group_name")
+    @Type(type = "varchar")
     private String name;
 
     @Expose
