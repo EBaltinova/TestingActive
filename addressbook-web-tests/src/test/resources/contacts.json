@@ -20,10 +20,10 @@
     "address": "address 0",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -47,10 +47,10 @@
     "address": "address 1",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -74,10 +74,10 @@
     "address": "address 2",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -101,10 +101,10 @@
     "address": "address 3",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -128,10 +128,10 @@
     "address": "address 4",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -155,10 +155,10 @@
     "address": "address 5",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -182,10 +182,10 @@
     "address": "address 6",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -209,10 +209,10 @@
     "address": "address 7",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -236,10 +236,10 @@
     "address": "address 8",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   },
   {
@@ -263,10 +263,10 @@
     "address": "address 9",
     "photo": "src\\test\\resources\\girl.png",
     "bday": 12,
-    "bmonth": "may",
+    "bmonth": "May",
     "byear": "1999",
     "aday": 12,
-    "amonth": "december",
+    "amonth": "December",
     "ayear": "1993"
   }
 ]

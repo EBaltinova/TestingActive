@@ -1,17 +1,30 @@
 <list>
   <contact>
-    <firstname>firstName 0</firstname>
-    <lastname>lastName 0</lastname>
-    <group>test 0</group>
+    <firstname>firstName XML</firstname>
+    <lastname>lastName XML</lastname>
+    <middleName>middlename 0</middleName>
+    <nickname>nickname 0</nickname>
+    <title>title 0</title>
+    <company>company 0</company>
+    <faxPhone>777777 0</faxPhone>
+    <homepage>homepage 0</homepage>
+    <secondAddress>secondaddress 0</secondAddress>
+    <notes>nonononotes 0</notes>
+    <homePhone>1110</homePhone>
+    <mobilePhone>2220</mobilePhone>
+    <workPhone>3330</workPhone>
+    <homeSecPhone>4440</homeSecPhone>
+    <firstEmail>first@email0</firstEmail>
+    <secondEmail>second@email0</secondEmail>
+    <thirdEmail>third@email0</thirdEmail>
+    <address>address 0</address>
+    <photo>src\test\resources\girl.png</photo>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1999</byear>
+    <aday>12</aday>
+    <amonth>December</amonth>
+    <ayear>1993</ayear>
+    <groups/>
   </contact>
-  <contact>
-    <firstname>firstName 1</firstname>
-    <lastname>lastName 1</lastname>
-    <group>test 1</group>
-  </contact>
-  <contact>
-    <firstname>firstName 2</firstname>
-    <lastname>lastName 2</lastname>
-    <group>test 2</group>
-  </contact>
-</list>
+  </list>

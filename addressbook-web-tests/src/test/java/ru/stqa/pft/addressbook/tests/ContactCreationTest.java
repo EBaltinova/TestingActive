@@ -26,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTest extends TestBase {
     @DataProvider
     public Iterator<Object[]> validContactsFromXml() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts")))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")))) {
             StringBuilder xml = new StringBuilder();
             String line = reader.readLine();
 
@@ -66,16 +66,13 @@ public class ContactCreationTest extends TestBase {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
             StringBuilder csv = new StringBuilder();
             String line = reader.readLine();
-
             while (line != null) {
                 csv.append(line);
                 line = reader.readLine();
             }
-
             CsvMapper mapper = new CsvMapper();
             MappingIterator<ContactData> personIter = mapper.readerWithTypedSchemaFor(ContactData.class).readValues(String.valueOf(csv));
             List<ContactData> contacts = personIter.readAll();
-
             return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
         }
     }
@@ -90,12 +87,10 @@ public class ContactCreationTest extends TestBase {
     }
 
     @Test(dataProvider = "validContactsFromJson")
-    public void testContactCreation(ContactData contact) {
+    public void testContactCreationJson(ContactData contact) {
         ContactHelper contactHelper = app.contact();
         SoftAssert softAssert = new SoftAssert();
         Contacts before = app.db().contacts();
-        File photo = new File("src/test/resources/girl.png");
-        contact.withPhoto(photo);
 
         assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
         contactHelper.initContactCreation();
@@ -124,8 +119,33 @@ public class ContactCreationTest extends TestBase {
         ContactHelper contactHelper = app.contact();
         SoftAssert softAssert = new SoftAssert();
         Contacts before = app.db().contacts();
-        File photo = new File("src/test/resources/girl.png");
-        contact.withPhoto(photo);
+
+        assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
+        contactHelper.initContactCreation();
+
+        Arrays
+                .asList("bday", "bmonth", "aday", "amonth", "photo", "submit")
+                .forEach((String elementName) -> {
+                    String message = String.format("Element <%s> is not available", elementName);
+                    softAssert.assertTrue(contactHelper.isClickable(By.name(elementName)), message);
+                });
+
+        softAssert.assertTrue(contactHelper.isClickable(By.cssSelector("input:nth-child(87)")), "Submit button is not available");
+        softAssert.assertAll();
+
+        contactHelper.fillContactForm(contact, true);
+        contactHelper.submitContactCreation();
+        app.goTo().homePage();
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+        verifyContactListInUI();
+    }
+
+    @Test(dataProvider = "validContactsFromXml")
+    public void testContactCreationXml(ContactData contact) {
+        ContactHelper contactHelper = app.contact();
+        SoftAssert softAssert = new SoftAssert();
+        Contacts before = app.db().contacts();
 
         assertThat("Add new contact button is not available", contactHelper.isClickable(By.linkText("add new")));
         contactHelper.initContactCreation();
