@@ -33,11 +33,11 @@ public class ContactHelper extends HelperBase {
         type(By.name("homepage"), contactData.getHomepage());
         type(By.name("address2"), contactData.getSecondAddress());
 
-        type(By.name("bday"), String.format("%d", contactData.getBday()));
-        type(By.name("bmonth"), contactData.getBmonth());
+        select(By.name("bday"), String.format("%d", contactData.getBday()));
+        select(By.name("bmonth"), contactData.getBmonth());
         type(By.name("byear"), contactData.getByear());
-        type(By.name("aday"), String.format("%d", contactData.getAday()));
-        type(By.name("amonth"), contactData.getAmonth());
+        select(By.name("aday"), String.format("%d", contactData.getAday()));
+        select(By.name("amonth"), contactData.getAmonth());
         type(By.name("ayear"), contactData.getAyear());
 
         type(By.name("notes"), contactData.getNotes());
@@ -50,14 +50,11 @@ public class ContactHelper extends HelperBase {
         type(By.name("email3"), contactData.getThirdEmail());
         attach(By.name("photo"),contactData.getPhoto());
 
-
         if (creation) {
             if (contactData.getGroups().size() > 0) {
                 Assert.assertTrue(contactData.getGroups().size() == 1);
                 new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
             }
-            } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
     }
 
@@ -184,10 +181,10 @@ public class ContactHelper extends HelperBase {
         String homepage = driver.findElement(By.name("homepage")).getAttribute("value");
         String secondAddress = driver.findElement(By.name("secondAddress")).getAttribute("value");
         String notes = driver.findElement(By.name("notes")).getAttribute("value");
-        Integer bday = Integer.parseInt(driver.findElement(By.name("bday")).getAttribute("value"));
+        Byte bday = Byte.parseByte(driver.findElement(By.name("bday")).getAttribute("value"));
         String bmonth = driver.findElement(By.name("bmonth")).getAttribute("value");
         String byear = driver.findElement(By.name("byear")).getAttribute("value");
-        Integer aday = Integer.parseInt(driver.findElement(By.name("aday")).getAttribute("value"));
+        Byte aday = Byte.parseByte(driver.findElement(By.name("aday")).getAttribute("value"));
         String amonth = driver.findElement(By.name("amonth")).getAttribute("value");
         String ayear = driver.findElement(By.name("ayear")).getAttribute("value");
         String home = driver.findElement(By.name("home")).getAttribute("value");

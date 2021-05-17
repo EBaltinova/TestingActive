@@ -14,6 +14,7 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.3.0-alpha5'
     implementation 'mysql:mysql-connector-java:8.0.22'
     implementation 'org.hibernate:hibernate-core:5.4.20.Final'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: '2.12.3'
 }
 task testGroups (type: Test) {
     useTestNG {

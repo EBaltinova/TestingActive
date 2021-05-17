@@ -1,9 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 
@@ -18,6 +16,12 @@ public class HelperBase {
         driver.findElement(locator).click();
     }
 
+    public boolean isClickable(By locator) {
+        WebElement element = driver.findElement(locator);
+
+        return element.isEnabled() && element.isDisplayed();
+    }
+
     protected void type(By locator, String text) {
         click(locator);
         if (text != null) {
@@ -26,6 +30,15 @@ public class HelperBase {
                 driver.findElement(locator).clear();
                 driver.findElement(locator).sendKeys(text);
             }
+        }
+    }
+
+    protected void select(By locator, String text) {
+        click(locator);
+
+        if (text != null) {
+            Select select = new Select(locator.findElement(driver));
+            select.selectByValue(text);
         }
     }
 

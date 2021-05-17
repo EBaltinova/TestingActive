@@ -1,9 +1,11 @@
 package ru.stqa.pft.addressbook.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
+import org.hibernate.type.ShortType;
 
 import javax.persistence.*;
 import java.io.File;
@@ -14,9 +16,34 @@ import java.util.Set;
 @XStreamAlias("contact")
 @Entity
 @Table(name = "addressbook")
-
+@JsonPropertyOrder({
+        "firstname",
+        "lastname",
+        "middleName",
+        "nickname",
+        "title",
+        "company",
+        "faxPhone",
+        "homepage",
+        "secondAddress",
+        "notes",
+        "homePhone",
+        "mobilePhone",
+        "workPhone",
+        "homeSecPhone",
+        "firstEmail",
+        "secondEmail",
+        "thirdEmail",
+        "address",
+        "photo",
+        "bday",
+        "bmonth",
+        "byear",
+        "aday",
+        "amonth",
+        "ayear"
+})
 public class ContactData {
-
     @XStreamOmitField
     @Id
     @Column(name = "id")
@@ -123,8 +150,8 @@ public class ContactData {
 
     @Expose
     @Column(name = "bday")
-    @Type(type = "int")
-    private Integer bday;
+    @Type(type = "byte")
+    private Byte bday;
 
     @Expose
     @Column(name = "bmonth")
@@ -136,8 +163,8 @@ public class ContactData {
 
     @Expose
     @Column(name = "aday")
-    @Type(type = "int")
-    private Integer aday;
+    @Type(type = "byte")
+    private Byte aday;
 
     @Expose
     @Column(name = "amonth")
@@ -240,7 +267,7 @@ public class ContactData {
         return notes;
     }
 
-    public Integer getBday() {
+    public Byte getBday() {
         return bday;
     }
 
@@ -252,7 +279,7 @@ public class ContactData {
         return byear;
     }
 
-    public Integer getAday() {
+    public Byte getAday() {
         return aday;
     }
 
@@ -387,7 +414,7 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withBday(Integer bday) {
+    public ContactData withBday(Byte bday) {
         this.bday = bday;
         return this;
     }
@@ -402,7 +429,7 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withAday(Integer aday) {
+    public ContactData withAday(Byte aday) {
         this.aday = aday;
         return this;
     }
