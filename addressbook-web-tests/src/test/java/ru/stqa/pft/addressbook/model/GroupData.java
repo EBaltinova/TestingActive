@@ -28,17 +28,15 @@ public class GroupData {
 
     @Expose
     @Column(name = "group_name")
-    @Type(type = "varchar")
+    @Type(type = "string")
     private String name;
 
     @Expose
-    @Column(name = "group_header")
-    @Type(type = "text")
+    @Column(name = "group_header", length = 16777215, columnDefinition = "mediumtext")
     private String header;
 
     @Expose
-    @Column(name = "group_footer")
-    @Type(type = "text")
+    @Column(name = "group_footer", length = 16777215, columnDefinition = "mediumtext")
     private String footer;
 
     @ManyToMany(mappedBy = "groups", fetch = FetchType.EAGER)
