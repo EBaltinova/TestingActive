@@ -62,19 +62,12 @@ public class GroupCreationTest extends TestBase {
   }
 
   @DataProvider
-  public Iterator<Object[]> validGroupsFromCsv(String path) throws IOException {
-    try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/groupsAll.csv"))) {
-      StringBuilder csv = new StringBuilder();
-      String line = reader.readLine();
-      while (line != null) {
-        csv.append(line);
-        line = reader.readLine();
-      }
+  public Iterator<Object[]> validGroupsFromCsv() throws IOException {
       CsvMapper mapper = new CsvMapper();
-      MappingIterator<GroupData> personIter = mapper.readerWithTypedSchemaFor(GroupData.class).readValues(String.valueOf(csv));
+      MappingIterator<GroupData> personIter = mapper.readerWithTypedSchemaFor(GroupData.class).readValues(new File("src/test/resources/groupsAll.csv"));
       List<GroupData> groups = personIter.readAll();
+
       return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-    }
   }
 
   @Test (dataProvider = "validGroupsFromJson")

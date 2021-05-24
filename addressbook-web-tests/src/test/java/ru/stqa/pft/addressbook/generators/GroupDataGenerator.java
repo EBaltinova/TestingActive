@@ -6,6 +6,7 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
+import org.apache.commons.lang3.RandomStringUtils;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GroupDataGenerator {
 
@@ -46,8 +48,7 @@ public class GroupDataGenerator {
             saveAsXml(groups, new File(file));
         } else if (format.equals("json")) {
             saveAsJson(groups, new File(file));
-        }
-        else {
+        } else {
             System.out.println("Unrecognized format " + format);
         }
     }
@@ -79,12 +80,20 @@ public class GroupDataGenerator {
     }
 
     private List<GroupData> generateGroups(int count) {
-        List<GroupData> groups = new ArrayList<GroupData>();
+        List<GroupData> groups = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            groups.add(new GroupData().withName(String.format("test CSV%s", i))
-            .withHeader(String.format("header %s", i)).withFooter(String.format("footer %s", i)));
+            String name = generateString(10, 25);
+            String header = generateString(10, 25);
+            String footer = generateString(10, 25);
+            groups.add(new GroupData()
+                    .withName(name)
+                    .withHeader(header)
+                    .withFooter(footer));
         }
         return groups;
     }
 
+    private String generateString(int min, int max) {
+        return RandomStringUtils.randomAlphanumeric(new Random().nextInt(max - min) + min);
+    }
 }

@@ -1,10 +1,2 @@
-firstName CSV 0;lastName CSV 0;nickname 0;address 0;first@email0;second@email0;third@email0;1110;4440;2220
-firstName CSV 1;lastName CSV 1;nickname 1;address 1;first@email1;second@email1;third@email1;1111;4441;2221
-firstName CSV 2;lastName CSV 2;nickname 2;address 2;first@email2;second@email2;third@email2;1112;4442;2222
-firstName CSV 3;lastName CSV 3;nickname 3;address 3;first@email3;second@email3;third@email3;1113;4443;2223
-firstName CSV 4;lastName CSV 4;nickname 4;address 4;first@email4;second@email4;third@email4;1114;4444;2224
-firstName CSV 5;lastName CSV 5;nickname 5;address 5;first@email5;second@email5;third@email5;1115;4445;2225
-firstName CSV 6;lastName CSV 6;nickname 6;address 6;first@email6;second@email6;third@email6;1116;4446;2226
-firstName CSV 7;lastName CSV 7;nickname 7;address 7;first@email7;second@email7;third@email7;1117;4447;2227
-firstName CSV 8;lastName CSV 8;nickname 8;address 8;first@email8;second@email8;third@email8;1118;4448;2228
-firstName CSV 9;lastName CSV 9;nickname 9;address 9;first@email9;second@email9;third@email9;1119;4449;2229
+firstnameCsv,lastnameCsv,middleNameCsv,nicknameCsv,titleCsv,companyCsv,faxPhoneCsv,homepageCsv,secondAddressCsv,notesCsv,homePhoneCsv,mobilePhoneCsv,workPhoneCsv,homeSecPhoneCsv,firstEmailCsv,secondEmailCsv,thirdEmailCsv,addressCsv,src\\test\\resources\\girl.png,12,May,byearCsv,12,May,ayeaCsv
+firstnameCsv,lastnameCsv,middleNameCsv,nicknameCsv,titleCsv,companyCsv,faxPhoneCsv,homepageCsv,secondAddressCsv,notesCsv,homePhoneCsv,mobilePhoneCsv,workPhoneCsv,homeSecPhoneCsv,firstEmailCsv,secondEmailCsv,thirdEmailCsv,addressCsv,src\\test\\resources\\girl.png,12,May,byearCsv,12,May,ayeaCsv
