@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.By;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -74,39 +75,34 @@ public class ContactModificationTest extends TestBase {
     }
 
     @DataProvider
-    public Object[] validContactsFromCsv() throws IOException {
-        ContactData contact = (ContactData)readCsv("src/test/resources/contact.csv").next()[0];
-        ContactData contactModified = (ContactData)readCsv("src/test/resources/contactModified.csv").next()[0];
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("create", contact);
-        map.put("modify", contactModified);
-
-        return Collections.singletonList(map).toArray();
-    }
-
-    @DataProvider
-    public Object[] validContactsFromJson() throws IOException {
-        ContactData contact = (ContactData) readJson("src/test/resources/contact.json").next()[0];
-        ContactData contactModified = (ContactData) readJson("src/test/resources/contactModified.json").next()[0];
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("create", contact);
-        map.put("modify", contactModified);
-
-        return Collections.singletonList(map).toArray();
-    }
-
-    @DataProvider
-    public Object[] validContactsFromXml() throws IOException {
-        ContactData contact = (ContactData) readXml("src/test/resources/contact.xml").next()[0];
-        ContactData contactModified = (ContactData) readXml("src/test/resources/contactModified.xml").next()[0];
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("create", contact);
-        map.put("modify", contactModified);
-
-        return Collections.singletonList(map).toArray();
+    public Object[] validContacts(ITestContext context) throws Exception {
+        String format = context.getCurrentXmlTest().getAllParameters().getOrDefault("format", null);
+        ContactData contact;
+        ContactData contactModified;
+        switch (format) {
+            case "csv":
+                contact = (ContactData)readCsv("src/test/resources/contact.csv").next()[0];
+                contactModified = (ContactData)readCsv("src/test/resources/contactModified.csv").next()[0];
+                break;
+            case "xml":
+                contact = (ContactData) readXml("src/test/resources/contact.xml").next()[0];
+                contactModified = (ContactData) readXml("src/test/resources/contactModified.xml").next()[0];
+                break;
+            case "json":
+                contact = (ContactData) readJson("src/test/resources/contact.json").next()[0];
+                contactModified = (ContactData) readJson("src/test/resources/contactModified.json").next()[0];
+                break;
+            default:
+                throw new Exception("Задан неверный формат файла");
         }
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("create", contact);
+        map.put("modify", contactModified);
 
-    @Test (dataProvider = "validContactsFromCsv")
+        return Collections.singletonList(map).toArray();
+    }
+
+    @Test (dataProvider = "validContacts")
     public void testContactModificationFromCsv(HashMap<String, ContactData> contactsMap) {
         ContactData contact = contactsMap.get("create");
         ContactData contactModify = contactsMap.get("modify");
@@ -129,7 +125,7 @@ public class ContactModificationTest extends TestBase {
         verifyContactListInUI();
     }
 
-    @Test (dataProvider = "validContactsFromJson")
+    @Test (dataProvider = "validContacts")
     public void testContactModificationFromJson(HashMap<String, ContactData> contactsMap) {
         ContactData contact = contactsMap.get("create");
         ContactData contactModify = contactsMap.get("modify");
@@ -152,13 +148,16 @@ public class ContactModificationTest extends TestBase {
         verifyContactListInUI();
     }
 
-    @Test (dataProvider = "validContactsFromXml")
+    @Test (dataProvider = "validContacts")
     public void testContactModificationFromXml(HashMap<String, ContactData> contactsMap) {
-        ContactData contact = contactsMap.get("create");
-        ContactData contactModify = contactsMap.get("modify");
-        app.contact().create(contact, true);
         Contacts before = app.db().contacts();
-        ContactData modifiedContact = before.iterator().next();
+        if (before.size() == 0) {
+            ContactData contact = contactsMap.get("create");
+            app.contact().create(contact, true);
+        }
+        ContactData contactModify = contactsMap.get("modify");
+        Random random = new Random();
+        ContactData modifiedContact = before.stream().skip(random.nextInt(before.size())).findFirst().get();
         contactModify.withId(modifiedContact.getId());
         ContactHelper contactHelper = app.contact();
         contactHelper.editContactFormById(contactModify.getId());

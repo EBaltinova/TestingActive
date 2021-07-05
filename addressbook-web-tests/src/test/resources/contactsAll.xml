@@ -1,7 +1,7 @@
 <list>
   <contact>
-    <firstname>firstName XML 0</firstname>
-    <lastname>lastName XML 0</lastname>
+    <firstname>firstName 0</firstname>
+    <lastname>lastName 0</lastname>
     <middleName>middlename 0</middleName>
     <nickname>nickname 0</nickname>
     <title>title 0</title>
@@ -28,8 +28,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 1</firstname>
-    <lastname>lastName XML 1</lastname>
+    <firstname>firstName 1</firstname>
+    <lastname>lastName 1</lastname>
     <middleName>middlename 1</middleName>
     <nickname>nickname 1</nickname>
     <title>title 1</title>
@@ -56,8 +56,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 2</firstname>
-    <lastname>lastName XML 2</lastname>
+    <firstname>firstName 2</firstname>
+    <lastname>lastName 2</lastname>
     <middleName>middlename 2</middleName>
     <nickname>nickname 2</nickname>
     <title>title 2</title>
@@ -84,8 +84,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 3</firstname>
-    <lastname>lastName XML 3</lastname>
+    <firstname>firstName 3</firstname>
+    <lastname>lastName 3</lastname>
     <middleName>middlename 3</middleName>
     <nickname>nickname 3</nickname>
     <title>title 3</title>
@@ -112,8 +112,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 4</firstname>
-    <lastname>lastName XML 4</lastname>
+    <firstname>firstName 4</firstname>
+    <lastname>lastName 4</lastname>
     <middleName>middlename 4</middleName>
     <nickname>nickname 4</nickname>
     <title>title 4</title>
@@ -140,8 +140,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 5</firstname>
-    <lastname>lastName XML 5</lastname>
+    <firstname>firstName 5</firstname>
+    <lastname>lastName 5</lastname>
     <middleName>middlename 5</middleName>
     <nickname>nickname 5</nickname>
     <title>title 5</title>
@@ -168,8 +168,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 6</firstname>
-    <lastname>lastName XML 6</lastname>
+    <firstname>firstName 6</firstname>
+    <lastname>lastName 6</lastname>
     <middleName>middlename 6</middleName>
     <nickname>nickname 6</nickname>
     <title>title 6</title>
@@ -196,8 +196,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 7</firstname>
-    <lastname>lastName XML 7</lastname>
+    <firstname>firstName 7</firstname>
+    <lastname>lastName 7</lastname>
     <middleName>middlename 7</middleName>
     <nickname>nickname 7</nickname>
     <title>title 7</title>
@@ -224,8 +224,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 8</firstname>
-    <lastname>lastName XML 8</lastname>
+    <firstname>firstName 8</firstname>
+    <lastname>lastName 8</lastname>
     <middleName>middlename 8</middleName>
     <nickname>nickname 8</nickname>
     <title>title 8</title>
@@ -252,8 +252,8 @@
     <groups/>
   </contact>
   <contact>
-    <firstname>firstName XML 9</firstname>
-    <lastname>lastName XML 9</lastname>
+    <firstname>firstName 9</firstname>
+    <lastname>lastName 9</lastname>
     <middleName>middlename 9</middleName>
     <nickname>nickname 9</nickname>
     <title>title 9</title>

@@ -6,14 +6,21 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
+import org.apache.commons.lang3.RandomStringUtils;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Stream;
 
 public class ContactDataGenerator {
 
@@ -82,37 +89,50 @@ public class ContactDataGenerator {
             }
         }
     }
-    private List<ContactData> generateContacts(int count) {
+    private List<ContactData> generateContacts(int count) throws IOException {
         List<ContactData> contacts = new ArrayList<ContactData>();
+
         for (int i = 0; i < count; i++) {
-            contacts.add(new ContactData().withFirstname(String.format("firstName %s", i))
-                    .withLastname(String.format("lastName %s", i))
-                    .withNickname(String.format("nickname %s", i))
-                    .withMiddleName(String.format("middlename %s", i))
-                    .withTitle(String.format("title %s", i))
-                    .withCompany(String.format("company %s", i))
-                    .withFaxPhone(String.format("777777 %s", i))
-                    .withHomepage(String.format("homepage %s", i))
-                    .withSecondAddress(String.format("secondaddress %s", i))
-                    .withNotes(String.format("nonononotes %s", i))
+            contacts.add(new ContactData().withFirstname(generateString(10,25))
+                    .withLastname(generateString(10,25))
+                    .withNickname(generateString(10,25))
+                    .withMiddleName(generateString(10,25))
+                    .withTitle(generateString(10,25))
+                    .withCompany(generateString(10,25))
+                    .withFaxPhone(generateInt())
+                    .withHomepage(generateString(10,25))
+                    .withSecondAddress(generateString(10,25))
+                    .withNotes(generateString(10,25))
                     .withBday(Byte.parseByte("12"))
                     .withBmonth(String.format("May"))
                     .withByear(String.format("1999"))
                     .withAday(Byte.parseByte("12"))
                     .withAmonth(String.format("December"))
                     .withAyear(String.format("1993"))
-                    .withHomePhone(String.format("111%s", i))
-                    .withMobilePhone(String.format("222%s", i))
-                    .withWorkPhone(String.format("333%s", i))
-                    .withHomeSecPhone(String.format("444%s", i))
-                    .withAddress(String.format("address %s", i))
-                    .withFirstEmail(String.format("first@email%s", i))
-                    .withSecondEmail(String.format("second@email%s", i))
-                    .withPhoto(new File("src/test/resources/girl.png"))
-                    .withThirdEmail(String.format("third@email%s", i)));
-
+                    .withHomePhone(generateInt())
+                    .withMobilePhone(generateInt())
+                    .withWorkPhone(generateInt())
+                    .withHomeSecPhone(generateInt())
+                    .withAddress(generateString(10,25))
+                    .withFirstEmail(generateString(10,25))
+                    .withSecondEmail(generateString(10,25))
+                    .withPhoto(new File(randomFile("src/test/resources/PhotoForContacts")))
+                    .withThirdEmail(generateString(10,25)));
         }
         return contacts;
+    }
+
+    private String generateString(int min, int max) {
+        return RandomStringUtils.randomAlphanumeric(new Random().nextInt(max - min) + min);
+    }
+
+    private String generateInt() {
+        return RandomStringUtils.randomNumeric(8);
+    }
+
+    private String randomFile(String path) throws IOException {
+        Stream<Path> files = Files.walk(Paths.get(path)).filter(Files::isRegularFile);
+        return files.skip(new Random().nextInt((int)files.count())).findFirst().get().toString();
     }
 
 }

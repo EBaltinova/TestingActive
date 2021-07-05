@@ -8,7 +8,6 @@ import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.By;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ru.stqa.pft.addressbook.appmanager.ContactHelper;
@@ -74,7 +73,7 @@ public class ContactCreationTest extends TestBase {
                 contacts = validContactsFromCsv("src/test/resources/contactsAll.csv");
                 break;
             case "xml":
-                contacts = validContactsFromCsv("src/test/resources/contactsAll.xml");
+                contacts = validContactsFromXml("src/test/resources/contactsAll.xml");
                 break;
             case "json":
                 contacts = validContactsFromJson("src/test/resources/contactsAll.json");
