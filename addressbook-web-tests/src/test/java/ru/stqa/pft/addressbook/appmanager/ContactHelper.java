@@ -1,5 +1,10 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +14,13 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ContactHelper extends HelperBase {
 
@@ -32,7 +43,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("fax"), contactData.getFaxPhone());
         type(By.name("homepage"), contactData.getHomepage());
         type(By.name("address2"), contactData.getSecondAddress());
-
         select(By.name("bday"), String.format("%d", contactData.getBday()));
         select(By.name("bmonth"), contactData.getBmonth());
         type(By.name("byear"), contactData.getByear());
@@ -208,6 +218,93 @@ public class ContactHelper extends HelperBase {
 
     private void initContactModificationById(int id) {
         driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
+    }
+
+    public List<ContactData> validContactsFromXml(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+            StringBuilder xml = new StringBuilder();
+            String line = reader.readLine();
+
+            while (line != null) {
+                xml.append(line);
+                line = reader.readLine();
+            }
+
+            XStream xstream = new XStream();
+            xstream.processAnnotations(ContactData.class);
+
+            return (List<ContactData>) xstream.fromXML(xml.toString());
+        }
+    }
+
+    public List<ContactData> validContactsFromCsv(String path) throws IOException {
+        CsvMapper mapper = new CsvMapper();
+        MappingIterator<ContactData> personIter = mapper.readerWithTypedSchemaFor(ContactData.class).readValues(new FileReader(path));
+
+        return personIter.readAll();
+    }
+
+    public List<ContactData> validContactsFromJson(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            StringBuilder json = new StringBuilder();
+            String line = reader.readLine();
+
+            while (line != null) {
+                json.append(line);
+                line = reader.readLine();
+            }
+
+            Gson gson = new Gson();
+
+            return gson.fromJson(json.toString(), new TypeToken<List<ContactData>>() {
+            }.getType());
+        }
+    }
+    public Iterator<Object[]> readJson(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String json = "";
+            String line = reader.readLine();
+            while (line != null) {
+                json += line;
+                line = reader.readLine();
+            }
+            Gson gson = new Gson();
+            List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
+            }.getType());
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+        }
+    }
+    public Iterator<Object[]> readCsv(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+            StringBuilder csv = new StringBuilder();
+            String line = reader.readLine();
+
+            while (line != null) {
+                csv.append(line);
+                line = reader.readLine();
+            }
+
+            CsvMapper mapper = new CsvMapper();
+            MappingIterator<ContactData> personIter = mapper.readerWithTypedSchemaFor(ContactData.class).readValues(String.valueOf(csv));
+            List<ContactData> contacts = personIter.readAll();
+
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+        }
+    }
+
+    public Iterator<Object[]> readXml(String path) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            StringBuilder xml = new StringBuilder();
+            String line = reader.readLine();
+            while (line != null) {
+                xml.append(line);
+                line = reader.readLine();
+            }
+            XStream xstream = new XStream();
+            xstream.processAnnotations(ContactData.class);
+            List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml.toString());
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+        }
     }
 
 }

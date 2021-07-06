@@ -1,24 +1,24 @@
 <list>
   <contact>
-    <firstname>firstName Xml Modif</firstname>
-    <lastname>lastName Modified</lastname>
-    <middleName>middlename 0</middleName>
-    <nickname>nickname 0</nickname>
-    <title>title 0</title>
-    <company>company 0</company>
-    <faxPhone>777777 0</faxPhone>
-    <homepage>homepage 0</homepage>
-    <secondAddress>secondaddress 0</secondAddress>
-    <notes>nonononotes 0</notes>
-    <homePhone>1110</homePhone>
-    <mobilePhone>2220</mobilePhone>
-    <workPhone>3330</workPhone>
-    <homeSecPhone>4440</homeSecPhone>
-    <firstEmail>first@email0</firstEmail>
-    <secondEmail>second@email0</secondEmail>
-    <thirdEmail>third@email0</thirdEmail>
-    <address>address 0</address>
-    <photo>src\test\resources\girl.png</photo>
+    <firstname>XMLwUIagM2vp9iGoL</firstname>
+    <lastname>XMLlhbikwY7Cbb</lastname>
+    <middleName>XMLIeztjeF5y5wesk4</middleName>
+    <nickname>4kzPrv8yB48Rd6E</nickname>
+    <title>pksrohZp1NUcEehn8BZqTycPduLUWH1j0MImZxXjLGfqDF2cx</title>
+    <company>FXaBNdrGrmT</company>
+    <faxPhone>09297782</faxPhone>
+    <homepage>jqG8M34ycDM97Ulg2OsvOW</homepage>
+    <secondAddress>JgSpng9Q8S6L</secondAddress>
+    <notes>S46vRLfDjWG0V98MGP1</notes>
+    <homePhone>97742069</homePhone>
+    <mobilePhone>16827547</mobilePhone>
+    <workPhone>17626113</workPhone>
+    <homeSecPhone>08507274</homeSecPhone>
+    <firstEmail>MUoakDmxGtM1Vmn2Exv</firstEmail>
+    <secondEmail>siFwLbZgw4jAmnM2</secondEmail>
+    <thirdEmail>Mmap1faYkfpKiyf</thirdEmail>
+    <address>SxuLvTyGfsWf9M1O</address>
+    <photo>src\test\resources\PhotoForContacts\images.jpg</photo>
     <bday>12</bday>
     <bmonth>May</bmonth>
     <byear>1999</byear>
@@ -27,4 +27,4 @@
     <ayear>1993</ayear>
     <groups/>
   </contact>
-  </list>
+</list>

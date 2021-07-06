@@ -1,62 +1,27 @@
-<list>
-  <group>
-    <name>mbQh6UZCQEXVUZ</name>
-    <header>TAwAtA5ytxmlXJQYZ</header>
-    <footer>3iXs8o0hiVvr9PqwX97WEiQ</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>sJLvGnxLZJpezd7EmSOCNO</name>
-    <header>Fi5btg7cFNotzFjxOXHFjfiD</header>
-    <footer>5Omq6uoxTjO</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>lQnZrmR73ejXr1lk230hQG</name>
-    <header>jrlPmfRSfVMpTttPP</header>
-    <footer>ofx2PkXYM3FmVI6aTiZ</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>z0CVRlVkNZV6ZGJtgxXJLf</name>
-    <header>c0RdkoeNYFdSvKNFG</header>
-    <footer>RzFnO5Bxfx6KJ</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>HsoEdzGuQ7dpgvBTlE</name>
-    <header>lGH5zmganlab0M8u90y0m5</header>
-    <footer>NZmoS8hjjDbg3SZJ</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>iLo1d2hbEglMxRe9oeVUxK</name>
-    <header>9bmtas9bdLIndAa</header>
-    <footer>AKLuFCViN6zfpA</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>AjSlduxkeSUU93brnx8uK</name>
-    <header>B5ezUZV7tXeF</header>
-    <footer>fdjtfliR8oYzEm7Q</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>kMa0piBctzK98ev9vgJYaSl</name>
-    <header>dHnOeKAmh2</header>
-    <footer>Cm54Z1IDvVRpLoP</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>QTxKLMHGQOnsYs8Kn50Vr</name>
-    <header>FyBUKyTgjpTEAJehPxUXIH</header>
-    <footer>WMWl4Z1Q1khas1TABYr7</footer>
-    <contacts/>
-  </group>
-  <group>
-    <name>nA1ysdwM8o</name>
-    <header>5ZlaoMcSTi3A7mAYaWh3tdU</header>
-    <footer>Q42eNl7ThOKLIQ75iN</footer>
-    <contacts/>
-  </group>
-</list>
+[
+  {
+    "name": "Qrv9hHtqkxg",
+    "header": "eWkGFgEOAiRMfuShKPpov4R",
+    "footer": "IhvPv5WP4OWNL1J"
+  },
+  {
+    "name": "KxdXc9vhgOO",
+    "header": "u26IOv5HxAS",
+    "footer": "oBnobMFPmJ39m4JPaKxH"
+  },
+  {
+    "name": "AmmutMSkNOFG8",
+    "header": "GRqOX2aEbsx",
+    "footer": "LGjfM2dGEhZcgLdh9"
+  },
+  {
+    "name": "n0WyfaCwl4Jiot",
+    "header": "BaMsfjVv0EhU",
+    "footer": "fS2S2XnW6qxtBbuHPFKK"
+  },
+  {
+    "name": "PVcJc0ip3oiE1g3p",
+    "header": "40CDPgjSZLrGOaXRV8aIs",
+    "footer": "G92wC5Oagl4"
+  }
+]

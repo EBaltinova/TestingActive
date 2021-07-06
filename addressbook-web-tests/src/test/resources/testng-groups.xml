@@ -4,8 +4,8 @@
     <parameter name="format" value="json" />
     <test name="Groups" >
         <classes>
-            <class name="ru.stqa.pft.addressbook.tests.GroupModificationTest" />
-            <class name="ru.stqa.pft.addressbook.tests.GroupCreationTest" />
+<!--            <class name="ru.stqa.pft.addressbook.tests.GroupModificationTest" />-->
+<!--            <class name="ru.stqa.pft.addressbook.tests.GroupCreationTest" />-->
             <class name="ru.stqa.pft.addressbook.tests.GroupDeletionTest" />
         </classes>
     </test>

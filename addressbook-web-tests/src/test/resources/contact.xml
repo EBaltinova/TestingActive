@@ -1,24 +1,24 @@
 <list>
   <contact>
-    <firstname>firstName XML</firstname>
-    <lastname>lastName XML</lastname>
-    <middleName>middlename 0</middleName>
-    <nickname>nickname 0</nickname>
-    <title>title 0</title>
-    <company>company 0</company>
-    <faxPhone>777777 0</faxPhone>
-    <homepage>homepage 0</homepage>
-    <secondAddress>secondaddress 0</secondAddress>
-    <notes>nonononotes 0</notes>
-    <homePhone>1110</homePhone>
-    <mobilePhone>2220</mobilePhone>
-    <workPhone>3330</workPhone>
-    <homeSecPhone>4440</homeSecPhone>
-    <firstEmail>first@email0</firstEmail>
-    <secondEmail>second@email0</secondEmail>
-    <thirdEmail>third@email0</thirdEmail>
-    <address>address 0</address>
-    <photo>src\test\resources\girl.png</photo>
+    <firstname>2JzsOMe7ubPK8uwu3bz</firstname>
+    <lastname>avyXa8NYoFk1</lastname>
+    <middleName>3rCueem6GGOPSP59Ov</middleName>
+    <nickname>Yn6mVdqj5vUoCK3EBo8dVAXH</nickname>
+    <title>PdGv0wyatASz4ZHjMNVrfhqnMLaFulBqL2oq04881rPViwNr8</title>
+    <company>HHFXiQFT6CbfbXZn5A</company>
+    <faxPhone>03155146</faxPhone>
+    <homepage>Oyv7JW847Ak5EsYZ</homepage>
+    <secondAddress>H1tNZgPeIOZ</secondAddress>
+    <notes>bZWEGJvfUy</notes>
+    <homePhone>87635358</homePhone>
+    <mobilePhone>79406372</mobilePhone>
+    <workPhone>77774747</workPhone>
+    <homeSecPhone>93837490</homeSecPhone>
+    <firstEmail>GWJ45rIyYZwJzS7UenQ</firstEmail>
+    <secondEmail>GYZxXyiqKHGsolNc1iTN</secondEmail>
+    <thirdEmail>MInulrVtkDDiVy</thirdEmail>
+    <address>N3Wd12SbYuemJl68vS</address>
+    <photo>src\test\resources\PhotoForContacts\images.jpg</photo>
     <bday>12</bday>
     <bmonth>May</bmonth>
     <byear>1999</byear>
@@ -27,4 +27,4 @@
     <ayear>1993</ayear>
     <groups/>
   </contact>
-  </list>
+</list>

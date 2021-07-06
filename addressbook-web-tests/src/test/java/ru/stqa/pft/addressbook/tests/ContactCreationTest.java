@@ -23,60 +23,19 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTest extends TestBase {
 
-    public List<ContactData> validContactsFromXml(String path) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
-            StringBuilder xml = new StringBuilder();
-            String line = reader.readLine();
-
-            while (line != null) {
-                xml.append(line);
-                line = reader.readLine();
-            }
-
-            XStream xstream = new XStream();
-            xstream.processAnnotations(ContactData.class);
-
-            return (List<ContactData>) xstream.fromXML(xml.toString());
-        }
-    }
-
-    public List<ContactData> validContactsFromCsv(String path) throws IOException {
-        CsvMapper mapper = new CsvMapper();
-        MappingIterator<ContactData> personIter = mapper.readerWithTypedSchemaFor(ContactData.class).readValues(new FileReader(path));
-
-        return personIter.readAll();
-    }
-
-    public List<ContactData> validContactsFromJson(String path) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            StringBuilder json = new StringBuilder();
-            String line = reader.readLine();
-
-            while (line != null) {
-                json.append(line);
-                line = reader.readLine();
-            }
-
-            Gson gson = new Gson();
-
-            return gson.fromJson(json.toString(), new TypeToken<List<ContactData>>() {
-            }.getType());
-        }
-    }
-
     @DataProvider
     public Iterator<Object[]> validContacts(ITestContext context) throws Exception {
         String format = context.getCurrentXmlTest().getAllParameters().getOrDefault("format", null);
         List<ContactData> contacts;
         switch (format) {
             case "csv":
-                contacts = validContactsFromCsv("src/test/resources/contactsAll.csv");
+                contacts = app.contact().validContactsFromCsv("src/test/resources/contactsAll.csv");
                 break;
             case "xml":
-                contacts = validContactsFromXml("src/test/resources/contactsAll.xml");
+                contacts = app.contact().validContactsFromXml("src/test/resources/contactsAll.xml");
                 break;
             case "json":
-                contacts = validContactsFromJson("src/test/resources/contactsAll.json");
+                contacts = app.contact().validContactsFromJson("src/test/resources/contactsAll.json");
                 break;
             default:
                 throw new Exception("Задан неверный формат файла");
@@ -84,7 +43,6 @@ public class ContactCreationTest extends TestBase {
 
         return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
-
 
     @Test(dataProvider = "validContacts")
     public void testContactCreation(ContactData contact) {

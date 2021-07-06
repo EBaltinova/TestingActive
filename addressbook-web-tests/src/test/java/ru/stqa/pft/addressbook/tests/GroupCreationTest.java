@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.By;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -29,99 +30,28 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GroupCreationTest extends TestBase {
 
   @DataProvider
-  public Iterator<Object[]> validGroupsFromXml() throws IOException {
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groupsAll.xml")))) {
-      String xml = "";
-      String line = reader.readLine();
-      while (line != null) {
-        xml += line;
-        line = reader.readLine();
-      }
-      XStream xstream = new XStream();
-      xstream.processAnnotations(GroupData.class);
-      List<GroupData> groups = (List<GroupData>) xstream.fromXML(xml);
-      return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+  public Iterator<Object[]> validGroups(ITestContext context) throws Exception {
+    String format = context.getCurrentXmlTest().getAllParameters().getOrDefault("format", null);
+    List<GroupData> groups;
+    switch (format) {
+      case "csv":
+        groups = app.group().validGroupsFromCsv("src/test/resources/groupsAll.csv");
+        break;
+      case "xml":
+        groups = app.group().validGroupsFromXml("src/test/resources/groupsAll.xml");
+        break;
+      case "json":
+        groups = app.group().validGroupsFromJson("src/test/resources/groupsAll.json");
+        break;
+      default:
+        throw new Exception("Задан неверный формат файла");
     }
+
+    return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
-  @DataProvider
-  public Iterator<Object[]> validGroupsFromJson() throws IOException {
-
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groupsAll.json")))) {
-      String json = "";
-      String line = reader.readLine();
-      while (line != null) {
-        json += line;
-        line = reader.readLine();
-      }
-      Gson gson = new Gson();
-      List<GroupData> groups = gson.fromJson(json, new TypeToken<List<GroupData>>() {
-      }.getType()); //List<GroupData>.class
-      return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-    }
-  }
-
-  @DataProvider
-  public Iterator<Object[]> validGroupsFromCsv() throws IOException {
-      CsvMapper mapper = new CsvMapper();
-      MappingIterator<GroupData> personIter = mapper.readerWithTypedSchemaFor(GroupData.class).readValues(new File("src/test/resources/groupsAll.csv"));
-      List<GroupData> groups = personIter.readAll();
-
-      return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-  }
-
-  @Test (dataProvider = "validGroupsFromJson")
-  public void testGroupCreationFromJson(GroupData group) {
-    app.goTo().groupPage();
-    GroupHelper groupHelper = app.group();
-    SoftAssert softAssert = new SoftAssert();
-    assertThat("Add new contact button is not available", groupHelper.isClickable(By.linkText("add new")));
-
-    Arrays
-            .asList("new", "delete", "edit")
-            .forEach((String elementName) -> {
-              String message = String.format("Element <%s> is not available", elementName);
-              softAssert.assertTrue(groupHelper.isClickable(By.name(elementName)), message);
-            });
-    softAssert.assertAll();
-    groupHelper.initGroupCreation();
-    softAssert.assertTrue(groupHelper.isClickable(By.name("submit")), "Submit button is not available");
-
-    Groups before = app.db().groups();
-    groupHelper.fillGroupForm(group);
-    groupHelper.submitGroupCreation();
-    Groups after = app.db().groups();
-    assertThat(after, equalTo(
-            before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
-  }
-
-  @Test (dataProvider = "validGroupsFromXml")
-  public void testGroupCreationFromXml(GroupData group) {
-    app.goTo().groupPage();
-    GroupHelper groupHelper = app.group();
-    SoftAssert softAssert = new SoftAssert();
-    assertThat("Add new contact button is not available", groupHelper.isClickable(By.linkText("add new")));
-
-    Arrays
-            .asList("new", "delete", "edit")
-            .forEach((String elementName) -> {
-              String message = String.format("Element <%s> is not available", elementName);
-              softAssert.assertTrue(groupHelper.isClickable(By.name(elementName)), message);
-            });
-    softAssert.assertAll();
-    groupHelper.initGroupCreation();
-    softAssert.assertTrue(groupHelper.isClickable(By.name("submit")), "Submit button is not available");
-
-    Groups before = app.db().groups();
-    groupHelper.fillGroupForm(group);
-    groupHelper.submitGroupCreation();
-    Groups after = app.db().groups();
-    assertThat(after, equalTo(
-            before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
-  }
-
-  @Test (dataProvider = "validGroupsFromCsv")
-  public void testGroupCreationFromCsv(GroupData group) {
+  @Test (dataProvider = "validGroups")
+  public void testGroupCreation(GroupData group) {
     app.goTo().groupPage();
     GroupHelper groupHelper = app.group();
     SoftAssert softAssert = new SoftAssert();
