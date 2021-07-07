@@ -109,7 +109,7 @@ public class ContactHelper extends HelperBase {
         driver.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
     }
 
-    private void selectContactById(int id) {
+    public void selectContactById(int id) {
         driver.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
@@ -216,7 +216,7 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    private void initContactModificationById(int id) {
+    public void initContactModificationById(int id) {
         driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
     }
 

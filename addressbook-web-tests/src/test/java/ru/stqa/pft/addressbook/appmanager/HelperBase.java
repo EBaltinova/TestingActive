@@ -18,7 +18,6 @@ public class HelperBase {
 
     public boolean isClickable(By locator) {
         WebElement element = driver.findElement(locator);
-
         return element.isEnabled() && element.isDisplayed();
     }
 
