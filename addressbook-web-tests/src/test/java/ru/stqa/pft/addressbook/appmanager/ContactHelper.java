@@ -108,6 +108,14 @@ public class ContactHelper extends HelperBase {
         driver.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
     }
 
+    public void openContactFormById(int id) {
+        driver.findElement(By.cssSelector("a[href='view.php?id=" + id + "']")).click();
+    }
+
+    public String getPageSource() {
+        return driver.getPageSource();
+    }
+
     public void selectContactById(int id) {
         driver.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
