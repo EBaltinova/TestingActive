@@ -49,7 +49,6 @@ public class ContactHelper extends HelperBase {
         select(By.name("aday"), String.format("%d", contactData.getAday()));
         select(By.name("amonth"), contactData.getAmonth());
         type(By.name("ayear"), contactData.getAyear());
-
         type(By.name("notes"), contactData.getNotes());
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("work"), contactData.getWorkPhone());
@@ -118,6 +117,11 @@ public class ContactHelper extends HelperBase {
     }
 
     public void deleteContact() {
+        click(By.xpath("//input[@value='Delete']"));
+        driver.switchTo().alert().accept();
+    }
+    public void deleteAllContact() {
+        driver.findElement(By.cssSelector("input[id='MassCB']")).click();
         click(By.xpath("//input[@value='Delete']"));
         driver.switchTo().alert().accept();
     }
