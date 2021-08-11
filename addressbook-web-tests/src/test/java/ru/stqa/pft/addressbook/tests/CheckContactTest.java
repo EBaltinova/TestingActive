@@ -29,6 +29,5 @@ public class CheckContactTest extends TestBase {
                 contact.getSecondAddress(), contact.getNotes()
         ).forEach(value -> softAssert.assertTrue(src.contains(value), String.format("Wrong value <%s>", value)));
         softAssert.assertAll();
-
     }
 }

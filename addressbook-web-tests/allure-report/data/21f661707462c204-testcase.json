@@ -1,0 +1,35 @@
+{
+  "uid" : "21f661707462c204",
+  "name" : "testGroupDeletion",
+  "title" : "Test group deletion",
+  "time" : {
+    "start" : 1628675354756,
+    "stop" : 1628675356686,
+    "duration" : 1930
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "d8ca75e1c27779b9",
+    "name" : "Suite1",
+    "title" : "Suite 1"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Suite1"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  } ],
+  "parameters" : [ ]
+}

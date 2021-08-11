@@ -1,0 +1,35 @@
+{
+  "uid" : "7623c7a62a91a86a",
+  "name" : "testGroupModification[{modify=GroupData{name='zd7gHCMI3KRS', id='2147483647'}, create=GroupData{name='KiiX1N3u5QPiC', id='2147483647'}}]",
+  "title" : "Test group modification [{modify=GroupData{name='zd7gHCMI3KRS', id='2147483647'}, create=GroupData{name='KiiX1N3u5QPiC', id='2147483647'}}]",
+  "time" : {
+    "start" : 1628677285082,
+    "stop" : 1628677287997,
+    "duration" : 2915
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "d8ca75e1c27779b9",
+    "name" : "Suite1",
+    "title" : "Suite 1"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Suite1"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  } ],
+  "parameters" : [ ]
+}

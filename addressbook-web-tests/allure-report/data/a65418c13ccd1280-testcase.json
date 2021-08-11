@@ -1,0 +1,35 @@
+{
+  "uid" : "a65418c13ccd1280",
+  "name" : "testGroupCreation[GroupData{name='TlkrAKRiMYCa2k', id='2147483647'}]",
+  "title" : "Test group creation [GroupData{name='TlkrAKRiMYCa2k', id='2147483647'}]",
+  "time" : {
+    "start" : 1628677290076,
+    "stop" : 1628677292089,
+    "duration" : 2013
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "d8ca75e1c27779b9",
+    "name" : "Suite1",
+    "title" : "Suite 1"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Suite1"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  } ],
+  "parameters" : [ ]
+}

@@ -3,7 +3,9 @@ apply plugin: 'java'
 repositories {
     mavenCentral()
 }
-
+configurations {
+    agent
+}
 dependencies {
     implementation 'org.testng:testng:7.1.0'
     implementation 'org.seleniumhq.selenium:selenium-java:2.52.0'
@@ -15,7 +17,10 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.22'
     implementation 'org.hibernate:hibernate-core:5.4.20.Final'
     implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: '2.12.3'
+    agent "org.aspectj:aspectjweaver:1.8.0"
+    implementation "ru.yandex.qatools.allure:allure-testng-adaptor:1.4.0.RC4"
 }
+
 task testGroups (type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-groups.xml'
@@ -29,6 +34,10 @@ task testGroups (type: Test) {
     if (project.hasProperty('verifyUI')) {
         systemProperty 'verifyUI', "${verifyUI}"
     }
+}
+
+testGroups.doFirst {
+    jvmArgs "-javaagent:${configurations.agent.singleFile}"
 }
 
 task testContacts (type: Test) {
